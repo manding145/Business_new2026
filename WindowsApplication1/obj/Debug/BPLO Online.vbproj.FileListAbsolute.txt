@@ -1,0 +1,44 @@
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\AForge.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\AForge.Video.DirectShow.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\AForge.Video.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\WebKitBrowser.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\WebKit.Interop.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\AForge.xml
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\AForge.Video.xml
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\AForge.Video.DirectShow.xml
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\Interop.AcroPDFLib.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\bin\Debug\Interop.WMPLib.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\BPLO Online.vbprojResolveAssemblyReference.cache
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\Interop.WMPLib.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\AxInterop.WMPLib.dll
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\BPLO Online.vbproj.ResolveComReference.cache
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.BPLO.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.BPLOApplicationRecord.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.bplomain.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.ConnectionConfiguration.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.Deny.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.Loading.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.LogIn.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.MainMenu.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.MayorsPermitControl.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.PendingDeny.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.PendingMayorsPermit.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.PendingToPrint.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.Print_mayorsbusinesspermit.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.ReportB1.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.Form3.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.SearchApplicationRecord.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.SearchMayorsPermit.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.SearchWalkInBussinessPermit.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.Splash.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.ViewAttachmentsPictureBox.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.ViewAttachments_webcontrol.resources
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\BPLO Online.vbproj.GenerateResource.Cache
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+D:\TACLOBAN\Online Project\BusinessOnlineRenewal\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
