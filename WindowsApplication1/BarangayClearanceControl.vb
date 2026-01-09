@@ -1,4 +1,4 @@
-﻿
+﻿Imports MySql.Data.MySqlClient
 Imports System.Data.SqlClient
 Imports System.IO
 Public Class BarangayClearanceControl
@@ -20,9 +20,9 @@ Public Class BarangayClearanceControl
 
 
             conn = "SELECT * from business_barangay WHERE BarangayId='" & mBarangayID & "'"
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr.Read = True
                 cmb_signatories.Items.Add(rdr("PunongBarangay")).ToString()
@@ -51,17 +51,17 @@ Public Class BarangayClearanceControl
 
             '//check current year
             conn = "Select * from business_brgyclearance_status where Year= '" & Date.Now.Year & "' order by  Year DESC, PermitNo DESC"
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.Read = True Then
 
 
                 conn = "Select * from business_brgyclearance_status where Year = '" & Date.Now.Year & "' and BusinessID= '" & mbusinessID & "' "
-                Con2 = New SqlConnection(cs)
+                Con2 = New MySqlConnection(cs)
                 Con2.Open()
-                cmd2 = New SqlCommand(conn, Con2)
+                cmd2 = New MySqlCommand(conn, Con2)
                 rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                 If rdr2.Read = True Then
 
@@ -74,9 +74,9 @@ Public Class BarangayClearanceControl
                     permit_no = rdr("PermitNo") + 1
 
                     conn = "Select * from business_brgyclearance_status where Year = '" & Date.Now.Year & "' and PermitNo='" & permit_no & "'"
-                    Con6 = New SqlConnection(cs)
+                    Con6 = New MySqlConnection(cs)
                     Con6.Open()
-                    cmd6 = New SqlCommand(conn, Con6)
+                    cmd6 = New MySqlCommand(conn, Con6)
                     rdr6 = cmd6.ExecuteReader(CommandBehavior.CloseConnection)
                     If rdr6.Read = True Then
 
@@ -97,21 +97,21 @@ Public Class BarangayClearanceControl
 
 
                     'insert to business_permit_status as new
-                    Con2 = New SqlConnection(cs)
+                    Con2 = New MySqlConnection(cs)
                     Con2.Open()
                     conn = "INSERT INTO business_brgyclearance_status (OwnerName, BusinessLine, BusinessName, BusinessAddress, Signatory, BarangayCaptainName, Barangay, AccountNo, BusinessID, DatePending, Status, DatePrinted, PermitNo, UserID, Year) " _
                     & "VALUES ('" & mOwnerName & "', '" & mBusinessLineDescription & "','" & mBusinessname & "','" & mBusinessAddress & "',  @Signatory,'" & cmb_signatories.Text & "', '" & mBarangayName & "', '" & txt_AccountNo.Text & "', '" & mbusinessID & "', '" & mytimestamp & "', 'D' , '" & mytimestamp & "', '" & permit_no & "', '" & userid & "', '" & Date.Now.Year & "')"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     cmd2.Parameters.AddWithValue("@Signatory", imgBytes)
                     cmd2.ExecuteNonQuery()
                     Con2.Close()
                     txt_permitNumber.Text = permit_no
 
                     'get lasst applicationid
-                    Con2 = New SqlConnection(cs)
+                    Con2 = New MySqlConnection(cs)
                     Con2.Open()
                     conn = "SELECT * FROM business_brgyclearance_status ORDER BY permitappid DESC LIMIT 1"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                     If rdr2.Read = True Then
 
@@ -131,9 +131,9 @@ Public Class BarangayClearanceControl
                 permit_no = "1"
 
                 conn = "Select * from business_brgyclearance_status where Year = '" & Date.Now.Year & "' and PermitNo='" & permit_no & "'"
-                Con6 = New SqlConnection(cs)
+                Con6 = New MySqlConnection(cs)
                 Con6.Open()
-                cmd6 = New SqlCommand(conn, Con6)
+                cmd6 = New MySqlCommand(conn, Con6)
                 rdr6 = cmd6.ExecuteReader(CommandBehavior.CloseConnection)
                 If rdr6.Read = True Then
 
@@ -154,21 +154,21 @@ Public Class BarangayClearanceControl
 
 
                 'insert to business_permit_status as new
-                Con2 = New SqlConnection(cs)
+                Con2 = New MySqlConnection(cs)
                 Con2.Open()
                 conn = "INSERT INTO business_brgyclearance_status (Signatory, BarangayCaptainName, Barangay, AccountNo, BusinessID, DatePending, Status, DatePrinted, PermitNo, UserID, Year) " _
                 & "VALUES (@Signatory,'" & cmb_signatories.Text & "', '" & mBarangayName & "', '" & txt_AccountNo.Text & "', '" & mbusinessID & "', '" & mytimestamp & "', 'D' , '" & mytimestamp & "', '" & permit_no & "', '" & userid & "', '" & Date.Now.Year & "')"
-                cmd2 = New SqlCommand(conn, Con2)
+                cmd2 = New MySqlCommand(conn, Con2)
                 cmd2.Parameters.AddWithValue("@Signatory", imgBytes)
                 cmd2.ExecuteNonQuery()
                 Con2.Close()
                 txt_permitNumber.Text = permit_no
 
                 'get lasst applicationid
-                Con2 = New SqlConnection(cs)
+                Con2 = New MySqlConnection(cs)
                 Con2.Open()
                 conn = "SELECT * FROM business_brgyclearance_status ORDER BY permitappid DESC LIMIT 1"
-                cmd2 = New SqlCommand(conn, Con2)
+                cmd2 = New MySqlCommand(conn, Con2)
                 rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                 If rdr2.Read = True Then
 

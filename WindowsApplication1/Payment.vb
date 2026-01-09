@@ -80,6 +80,13 @@ Public Class Payment
         End If
 
 
+        'If fire_file.Text = "" Then
+
+        '    MsgBox(" no Fire OR file uploaded")
+        '    Exit Sub
+        'End If
+
+
 
         'MsgBox("Transaction cannot be empty!")
         'End If
@@ -110,12 +117,14 @@ Public Class Payment
 
             Dim sourcePath2 As String = rawPath2.Replace("file://", "").Trim()
 
-        
+           
+
 
 
             sourcePath = sourcePath.Replace("/", "\")
             sourcePath2 = sourcePath2.Replace("/", "\")
-         
+
+
 
             Dim folderPath As String = "\\10.0.27.194\FileAttachment\BUSINESS_APPLICATION\" + referencono.Text + "\"
 
@@ -153,6 +162,15 @@ Public Class Payment
 
 
 
+            Dim fileName3 As String = referencono.Text + "_FIRE_OR.pdf"
+            Dim filePath3 As String = Path.Combine(folderPath, fileName3)
+
+
+
+
+           
+
+
             ''get email
             Dim email As String = ""
 
@@ -186,7 +204,7 @@ Public Class Payment
 
             Con_ms1 = New SqlConnection(mcs)
             Con_ms1.Open()
-            conn_ms1 = "UPDATE ONLINE.business_assessment_dtl set PaymentTransactionNo = '" & TxtTransaction.Text & "', OfficialReceipt='" & fileName & "' , CTC = '" & fileName2 & "' where ApplicationID='" & TxtApplicationNo.Text & "'"
+            conn_ms1 = "UPDATE ONLINE.business_assessment_dtl set PaymentTransactionNo = '" & TxtTransaction.Text & "', OfficialReceipt='" & fileName & "' , CTC = '" & fileName2 & "', FireOR = '" & fileName3 & "' where ApplicationID='" & TxtApplicationNo.Text & "'"
             cmd_ms1 = New SqlCommand(conn_ms1, Con_ms1)
             cmd_ms1.ExecuteNonQuery()
             Con_ms1.Close()
@@ -279,21 +297,21 @@ Public Class Payment
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
-        'Dim openFileDialog As New OpenFileDialog()
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim openFileDialog As New OpenFileDialog()
 
-        'openFileDialog.Filter = "PDF Files|*.pdf"
+        openFileDialog.Filter = "PDF Files|*.pdf"
 
 
-        'If openFileDialog.ShowDialog() = DialogResult.OK Then
+        If openFileDialog.ShowDialog() = DialogResult.OK Then
 
-        '    Try
-        '        AxAcroPDF3.src = openFileDialog.FileName
-        '        fire_file.Text = openFileDialog.FileName
-        '    Catch ex As Exception
+            Try
+                AxAcroPDF3.src = openFileDialog.FileName
+                fire_file.Text = openFileDialog.FileName
+            Catch ex As Exception
 
-        '        MessageBox.Show("Error loading files: " & ex.Message)
-        '    End Try
-        'End If
+                MessageBox.Show("Error loading files: " & ex.Message)
+            End Try
+        End If
     End Sub
 End Class

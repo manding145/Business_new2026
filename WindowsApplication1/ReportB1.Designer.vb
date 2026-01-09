@@ -23,7 +23,7 @@ Partial Class ReportB1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-
+        Me.ReportB1_ListedOfPrintedMayorsPermit1 = New WindowsApplication1.ReportB1_ListedOfPrintedMayorsPermit()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -34,7 +34,7 @@ Partial Class ReportB1
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-
+        Me.CrystalReportViewer1.ReportSource = Me.ReportB1_ListedOfPrintedMayorsPermit1
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(1055, 607)
         Me.CrystalReportViewer1.TabIndex = 2
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
@@ -52,5 +52,5 @@ Partial Class ReportB1
 
     End Sub
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-
+    Friend WithEvents ReportB1_ListedOfPrintedMayorsPermit1 As WindowsApplication1.ReportB1_ListedOfPrintedMayorsPermit
 End Class

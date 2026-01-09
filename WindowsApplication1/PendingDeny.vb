@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports MySql.Data.MySqlClient
+Imports System.Data.SqlClient
 Public Class PendingDeny
     Dim lack_itr1, lack_itr2, lack_itr3, lack_itr4, lack_gross, lack_firearms, lack_waterpotability, lack_francisetooperate, lack_bsp, lack_slaughter, lack_cityvet, lack_peso, lack_dole, lack_dot, lack_citytourism, lack_licensetooperate, lack_agriculture, lack_pcab, lack_psa, lack_enro, lack_brgyresolution, lack_spa, lack_contractlease, lack_validid, lack_cda, lack_coop, lack_ctc, lack_bfad, lack_unf, lack_brgyclearance, lack_oldpermit, lack_oldplate, lack_oldfire, lack_itr, lack_market_clearance As Integer
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -459,14 +460,14 @@ Public Class PendingDeny
                 Dim remarkstext As String
                 remarkstext = txt_remarks.Text & "   Access your account at Tacloban Business Portal. Click the link under Denied status and supply this login credentials:   " & "USERNAME: " & BPLOApplicationRecord.txt_accountno.Text & "       PASSWORD: " & BPLOApplicationRecord.txt_password.Text
 
-                Con = New SqlConnection(cs)
+                Con = New MySqlConnection(cs)
                 Con.Open()
 
                 conn = "INSERT INTO email_deny_application (AccountID, ApplicationID, DenyDateTime, Remarks, email, fullname, attachment_type, phonenumber) " _
                    & "VALUES ('" & txt_accountno.Text & "', '" & txt_applicationno.Text & "', '" & mytimestamp & "', @Remarks , '" & txt_email.Text & "', @BusinessName, 'deny_business', '" & TxtContactNo.Text & "')"
-                cmd = New SqlCommand(conn, Con)
-                cmd.Parameters.Add("@Remarks", SqlDbType.VarChar).Value = remarkstext
-                cmd.Parameters.Add("@BusinessName", SqlDbType.VarChar).Value = BPLOApplicationRecord.txt_businessname.Text
+                cmd = New MySqlCommand(conn, Con)
+                cmd.Parameters.Add("@Remarks", MySqlDbType.VarChar).Value = remarkstext
+                cmd.Parameters.Add("@BusinessName", MySqlDbType.VarChar).Value = BPLOApplicationRecord.txt_businessname.Text
                 cmd.ExecuteNonQuery()
                 Con.Close()
                 MsgBox("Application successully denied. This client will received notification to his email.", vbOKOnly & vbInformation, "Business Renewal")

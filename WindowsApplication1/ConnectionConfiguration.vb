@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 Public Class ConnectionConfiguration
 
     Private Sub BtnTest_Click(sender As Object, e As EventArgs) Handles BtnTest.Click
-        Con = New SqlConnection(cs)
+        Con = New MySqlConnection(cs)
         Try
             Con.Open()
             MsgBox("Successfully connected to database! ")

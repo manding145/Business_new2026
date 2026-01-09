@@ -145,10 +145,11 @@ Public Class PaymentDashboard
                             payment.totalpaid.Text = payment.TotalAssessmentAmount.Text
                             payment.assessment_file.Text = rdr_ms("OfficialReceipt").ToString
                             payment.ctc_file.Text = rdr_ms("CTC").ToString
+                            payment.fire_file.Text = rdr_ms("FireOR").ToString
                             payment.TxtTransaction.Text = rdr_ms("PaymentTransactionNo").ToString
                             payment.Button1.Enabled = False
                             payment.Button2.Enabled = False
-
+                            payment.Button3.Enabled = False
 
                         End If
 

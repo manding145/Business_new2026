@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|d:\\tacloban\\businessonlinerenewal_2025\\windowsapplication1\\connection.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|solutionrelative:windowsapplication1\\connection.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|WindowsApplication1||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|d:\\tacloban\\businessonlinerenewal_2025\\windowsapplication1\\payment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|solutionrelative:windowsapplication1\\payment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|d:\\tacloban\\businessonlinerenewal_2025\\windowsapplication1\\paymentdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|solutionrelative:windowsapplication1\\paymentdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|d:\\tacloban\\businessonlinerenewal_2025\\windowsapplication1\\paymentdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|solutionrelative:windowsapplication1\\paymentdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9989B9BB-CF0A-418F-8AFE-7B6ACE1B1D43}|WindowsApplication1\\WindowsApplication1.vbproj|d:\\tacloban\\businessonlinerenewal_2025\\windowsapplication1\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|eda661ea-dc61-4750-b3a5-f6e9c74060f5"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Connection.vb",
+              "DocumentMoniker": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\Connection.vb",
+              "RelativeDocumentMoniker": "WindowsApplication1\\Connection.vb",
+              "ToolTip": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\Connection.vb",
+              "RelativeToolTip": "WindowsApplication1\\Connection.vb",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-10-07T06:38:42.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Payment.vb [Design]",
+              "DocumentMoniker": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\Payment.vb",
+              "RelativeDocumentMoniker": "WindowsApplication1\\Payment.vb",
+              "ToolTip": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\Payment.vb [Design]",
+              "RelativeToolTip": "WindowsApplication1\\Payment.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-10-07T06:37:02.569Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentDashboard.vb",
+              "DocumentMoniker": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\PaymentDashboard.vb",
+              "RelativeDocumentMoniker": "WindowsApplication1\\PaymentDashboard.vb",
+              "ToolTip": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\PaymentDashboard.vb",
+              "RelativeToolTip": "WindowsApplication1\\PaymentDashboard.vb",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAewFoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-10-07T06:36:55.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentDashboard.vb [Design]",
+              "DocumentMoniker": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\PaymentDashboard.vb",
+              "RelativeDocumentMoniker": "WindowsApplication1\\PaymentDashboard.vb",
+              "ToolTip": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\PaymentDashboard.vb [Design]",
+              "RelativeToolTip": "WindowsApplication1\\PaymentDashboard.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-10-07T06:36:53.869Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WindowsApplication1",
+              "DocumentMoniker": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\WindowsApplication1.vbproj",
+              "RelativeDocumentMoniker": "WindowsApplication1\\WindowsApplication1.vbproj",
+              "ToolTip": "D:\\TACLOBAN\\BusinessOnlineRenewal_2025\\WindowsApplication1\\WindowsApplication1.vbproj*",
+              "RelativeToolTip": "WindowsApplication1\\WindowsApplication1.vbproj*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-07T06:36:23.843Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 37,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

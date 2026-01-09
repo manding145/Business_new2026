@@ -105,7 +105,7 @@ Public Class BPLOApplicationRecord
 
         Con_ms = New SqlConnection(mcs)
         Con_ms.Open()
-        conn_ms = "UPDATE ONLINE.business_applicationstatus_dtl set  verify_remarks='" & TxtRemarks.Text & "' , verify_status = 'V', admin_status = 'P', verified_timedt = '" & mytimestamp & "', user_verified ='" & userid & "', IsReupload = '0' WHERE applicationID='" & BPLOApplicationRecord.txt_applicationno.Text & "'"
+        conn_ms = "UPDATE ONLINE.business_applicationstatus_dtl set verify_remarks='" & TxtRemarks.Text & "' , verify_status = 'V', admin_status = 'P', verified_timedt = '" & mytimestamp & "', user_verified ='" & userid & "', IsReupload = '0' WHERE applicationID='" & BPLOApplicationRecord.txt_applicationno.Text & "'"
         Try
 
             cmd_ms = New SqlCommand(conn_ms, Con_ms)
@@ -116,7 +116,7 @@ Public Class BPLOApplicationRecord
 
             Con_ms1 = New SqlConnection(mcs)
             Con_ms1.Open()
-            conn_ms1 = "UPDATE ONLINE.business_application_tbl set accountno ='" & txt_accountno.Text & "', process_status = '0' " _
+            conn_ms1 = "UPDATE ONLINE.business_application_tbl set process_status = '0' " _
                 & "WHERE applicationID='" & applicationID_search & "'"
             cmd_ms1 = New SqlCommand(conn_ms1, Con_ms1)
             cmd_ms1.ExecuteNonQuery()

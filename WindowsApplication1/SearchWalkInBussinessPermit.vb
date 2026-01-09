@@ -35,6 +35,11 @@ Public Class SearchWalkInBussinessPermit
 
             Try
 
+
+
+
+
+
                 'CHECK IF THIS BUSINESSID APPLY FOR PERMIT
 
                 conn = "SELECT * from BPLS.PermitApplication WHERE BPLS.PermitApplication.BusinessID = '" & SearchBusinessID & "'  AND BPLS.PermitApplication.Year ='" & Date.Now.Year & "'"
@@ -69,10 +74,10 @@ Public Class SearchWalkInBussinessPermit
 
                     .permit_stat = "WalkIn"
 
-                    Con2 = New SqlConnection(cs)
+                    Con2 = New MySqlConnection(cs)
                     Con2.Open()
-                    conn = "SELECT * FROM ONLINE.business_permit_status WHERE AccountNo='" & SearchAccountNo & "' and Year ='" & Date.Now.Year & "'"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    conn = "SELECT * FROM business_permit_status WHERE AccountNo='" & SearchAccountNo & "' and Year ='" & Date.Now.Year & "'"
+                    cmd2 = New MySqlCommand(conn, Con2)
                     rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                     If rdr2.Read = True Then
 
@@ -270,10 +275,10 @@ Public Class SearchWalkInBussinessPermit
 
                         .permit_stat = "WalkIn"
 
-                        Con2 = New SqlConnection(cs)
+                        Con2 = New MySqlConnection(cs)
                         Con2.Open()
                         conn = "SELECT * FROM business_permit_status WHERE AccountNo='" & SearchAccountNo & "' and Year ='" & Date.Now.Year & "'"
-                        cmd2 = New SqlCommand(conn, Con2)
+                        cmd2 = New MySqlCommand(conn, Con2)
                         rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                         If rdr2.Read = True Then
 

@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports MySql.Data.MySqlClient
+Imports System.Data.SqlClient
 Public Class MayorsPermitControl
     Public applicationID_search, mBIN, mowneraddress, mbusinessID, mBusinessname, mAccountNo, mPhone, mBusinessAddress, mBusinessLineDescription, myear, mEmployees, mOwnerName, mBusinessNatureDescription, mBarangayName, mAmount, mORNumber, mDatePaid As String
     Public mpermitno As Integer
@@ -30,9 +31,9 @@ Public Class MayorsPermitControl
         Try
 
             conn = "SELECT * from business_signatory"
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr.Read = True
                 cmb_signatories.Items.Add(rdr("SignatoryName")).ToString()
@@ -147,9 +148,9 @@ Public Class MayorsPermitControl
         Try
 
             conn = "SELECT * from business_signatory where SignatoryName = '" & cmb_signatories.Text & "'"
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.Read = True Then
                 txt_position.Text = rdr("Position")
@@ -229,9 +230,9 @@ Public Class MayorsPermitControl
                       
                         'check if existing permit in Business Portal
                         conn2 = "Select * from  business_permit_status where Year= '" & Date.Now.Year & "' and PermitNo='" & permit_no & "'"
-                        Con2 = New SqlConnection(cs)
+                        Con2 = New MySqlConnection(cs)
                         Con2.Open()
-                        cmd2 = New SqlCommand(conn2, Con2)
+                        cmd2 = New MySqlCommand(conn2, Con2)
                         rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                         If rdr2.Read = True Then
                             MsgBox("This application has already taken in Business Portal Database!, Contact your system administrator.")
@@ -261,13 +262,13 @@ Public Class MayorsPermitControl
 
                         'insert to business_permit_status as new
 
-                        Con2 = New SqlConnection(cs)
+                        Con2 = New MySqlConnection(cs)
                         Con2.Open()
 
 
                         conn = "INSERT INTO business_permit_status (AccountNo, BusinessID, DatePending, Status, DatePrinted, PermitNo, UserID, Remarks, Year) " _
                          & "VALUES ('" & txt_AccountNo.Text & "', '" & mbusinessID & "', '" & mytimestamp & "', 'D' , '" & mytimestamp & "', '" & permit_no & "', '" & userid & "', '" & txt_remarks.Text & "', '" & Date.Now.Year & "')"
-                        cmd2 = New SqlCommand(conn, Con2)
+                        cmd2 = New MySqlCommand(conn, Con2)
                         cmd2.ExecuteNonQuery()
                         Con2.Close()
                         txt_permitNumber.Text = permit_no
@@ -277,11 +278,11 @@ Public Class MayorsPermitControl
 
 
                         'get lasst applicationid
-                        Con2 = New SqlConnection(cs)
+                        Con2 = New MySqlConnection(cs)
                         Con2.Open()
 
                         conn = "SELECT * FROM business_permit_status ORDER BY permitappid DESC LIMIT 1"
-                        cmd2 = New SqlCommand(conn, Con2)
+                        cmd2 = New MySqlCommand(conn, Con2)
                         rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                         If rdr2.Read = True Then
 
@@ -290,10 +291,10 @@ Public Class MayorsPermitControl
                         End If
                         Con2.Close()
 
-                        'Con2 = New SqlConnection(cs)
+                        'Con2 = New MySqlConnection(cs)
                         'Con2.Open()
                         'conn = "UPDATE business_applicationstatus_dtl set IsPrinted = '1', Printed_dttime = '" & mytimestamp & "' WHERE applicationID='" & applicationID_search & "'"
-                        'cmd2 = New SqlCommand(conn, Con2)
+                        'cmd2 = New MySqlCommand(conn, Con2)
                         'cmd2.ExecuteNonQuery()
                         'Con2.Close()
 
@@ -310,7 +311,7 @@ Public Class MayorsPermitControl
                         qrcodestr = mydate & " " & mAccountNo & " TC "
                         conn = "INSERT INTO cho_qrcode_dummy (descriptiontext, forwardedID, Type) " _
                           & "VALUES ('" & qrcodestr & "', '" & temp_applicationid & "', 'MP_WALKIN')"
-                        cmd2 = New SqlCommand(conn, Con2)
+                        cmd2 = New MySqlCommand(conn, Con2)
                         cmd2.ExecuteNonQuery()
                         'MsgBox("Health Certificate Record Successfully Saved", vbOKOnly & vbInformation, "Tacloban Health Office Management System")
                         Con2.Close()
@@ -336,13 +337,13 @@ Public Class MayorsPermitControl
 
                     'insert to business_permit_status as new
 
-                    Con2 = New SqlConnection(cs)
+                    Con2 = New MySqlConnection(cs)
                     Con2.Open()
 
 
                     conn = "INSERT INTO business_permit_status (AccountNo, BusinessID, DatePending, Status, DatePrinted, PermitNo, UserID, Remarks, Year) " _
                      & "VALUES ('" & txt_AccountNo.Text & "', '" & mbusinessID & "', '" & mytimestamp & "', 'D' , '" & mytimestamp & "', '" & permit_no & "', '" & userid & "', '" & txt_remarks.Text & "', '" & Date.Now.Year & "')"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     cmd2.ExecuteNonQuery()
                     Con2.Close()
                     txt_permitNumber.Text = permit_no
@@ -350,7 +351,7 @@ Public Class MayorsPermitControl
 
 
                     'get lasst applicationid
-                    Con2 = New SqlConnection(cs)
+                    Con2 = New MySqlConnection(cs)
                     Con2.Open()
 
 
@@ -358,7 +359,7 @@ Public Class MayorsPermitControl
 
 
                     conn = "SELECT * FROM business_permit_status ORDER BY permitappid DESC LIMIT 1"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                     If rdr2.Read = True Then
 
@@ -375,7 +376,7 @@ Public Class MayorsPermitControl
                     qrcodestr = mydate & " " & mAccountNo & " TC "
                     conn = "INSERT INTO cho_qrcode_dummy (descriptiontext, forwardedID, Type) " _
                       & "VALUES ('" & qrcodestr & "', '" & temp_applicationid & "', 'MP_WALKIN')"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     cmd2.ExecuteNonQuery()
                     'MsgBox("Health Certificate Record Successfully Saved", vbOKOnly & vbInformation, "Tacloban Health Office Management System")
                     Con2.Close()
@@ -459,13 +460,13 @@ Public Class MayorsPermitControl
 
 
 
-                        Con2 = New SqlConnection(cs)
+                        Con2 = New MySqlConnection(cs)
                         Con2.Open()
 
 
                         conn = "INSERT INTO business_permit_status (TypeApplication, ApplicationID, AccountNo, BusinessID, DatePending, Status, DatePrinted, PermitNo, UserID, Remarks, Year) " _
                          & "VALUES ('ONLINE', '" & applicationID_search & "', '" & txt_AccountNo.Text & "', '" & mbusinessID & "', '" & mytimestamp & "', 'D' , '" & mytimestamp & "', '" & permit_no & "', '" & userid & "', '" & txt_remarks.Text & "', '" & Date.Now.Year & "')"
-                        cmd2 = New SqlCommand(conn, Con2)
+                        cmd2 = New MySqlCommand(conn, Con2)
                         cmd2.ExecuteNonQuery()
                         Con2.Close()
                         txt_permitNumber.Text = permit_no
@@ -473,10 +474,10 @@ Public Class MayorsPermitControl
 
 
 
-                        Con2 = New SqlConnection(cs)
+                        Con2 = New MySqlConnection(cs)
                         Con2.Open()
                         conn = "SELECT * FROM business_permit_status ORDER BY permitappid DESC LIMIT 1"
-                        cmd2 = New SqlCommand(conn, Con2)
+                        cmd2 = New MySqlCommand(conn, Con2)
                         rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                         If rdr2.Read = True Then
 
@@ -486,17 +487,17 @@ Public Class MayorsPermitControl
                         Con2.Close()
 
                         'get lasst applicationid
-                        'Con2 = New SqlConnection(cs)
+                        'Con2 = New MySqlConnection(cs)
                         'Con2.Open()
 
 
 
 
 
-                        'Con2 = New SqlConnection(cs)
+                        'Con2 = New MySqlConnection(cs)
                         'Con2.Open()
                         'conn = "UPDATE business_permit_status set Status = 'D', DatePrinted = '" & mytimestamp & "', PermitNo = '" & permit_no & "', UserID ='" & userid & "', Remarks = '" & txt_remarks.Text & "', Year ='" & Date.Now.Year & "' WHERE applicationID='" & applicationID_search & "'"
-                        'cmd2 = New SqlCommand(conn, Con2)
+                        'cmd2 = New MySqlCommand(conn, Con2)
                         'cmd2.ExecuteNonQuery()
                         'Con2.Close()
                         'txt_permitNumber.Text = permit_no
@@ -538,7 +539,7 @@ Public Class MayorsPermitControl
                         qrcodestr = mydate & " " & mAccountNo & " TC "
                         conn = "INSERT INTO cho_qrcode_dummy (descriptiontext, forwardedID, Type) " _
                           & "VALUES ('" & qrcodestr & "', '" & temp_applicationid & "', 'MP_ONLINE')"
-                        cmd2 = New SqlCommand(conn, Con2)
+                        cmd2 = New MySqlCommand(conn, Con2)
                         cmd2.ExecuteNonQuery()
                         'MsgBox("Health Certificate Record Successfully Saved", vbOKOnly & vbInformation, "Tacloban Health Office Management System")
                         Con2.Close()
@@ -561,13 +562,13 @@ Public Class MayorsPermitControl
                     txt_permitNumber.Text = permit_no
 
 
-                    Con2 = New SqlConnection(cs)
+                    Con2 = New MySqlConnection(cs)
                     Con2.Open()
 
 
                     conn = "INSERT INTO business_permit_status (TypeApplication, ApplicationID, AccountNo, BusinessID, DatePending, Status, DatePrinted, PermitNo, UserID, Remarks, Year) " _
                      & "VALUES ('ONLINE, ''" & applicationID_search & "', '" & txt_AccountNo.Text & "', '" & mbusinessID & "', '" & mytimestamp & "', 'D' , '" & mytimestamp & "', '" & permit_no & "', '" & userid & "', '" & txt_remarks.Text & "', '" & Date.Now.Year & "')"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     cmd2.ExecuteNonQuery()
                     Con2.Close()
                     txt_permitNumber.Text = permit_no
@@ -575,10 +576,10 @@ Public Class MayorsPermitControl
 
 
 
-                    Con2 = New SqlConnection(cs)
+                    Con2 = New MySqlConnection(cs)
                     Con2.Open()
                     conn = "SELECT * FROM business_permit_status ORDER BY permitappid DESC LIMIT 1"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                     If rdr2.Read = True Then
 
@@ -588,14 +589,17 @@ Public Class MayorsPermitControl
                     Con2.Close()
 
                     'get lasst applicationid
-                    'Con2 = New SqlConnection(cs)
+                    'Con2 = New MySqlConnection(cs)
                     'Con2.Open()
 
 
-                    'Con2 = New SqlConnection(cs)
+
+
+
+                    'Con2 = New MySqlConnection(cs)
                     'Con2.Open()
                     'conn = "UPDATE business_permit_status set Status = 'D', DatePrinted = '" & mytimestamp & "', PermitNo = '" & permit_no & "', UserID ='" & userid & "', Remarks = '" & txt_remarks.Text & "', Year ='" & Date.Now.Year & "' WHERE applicationID='" & applicationID_search & "'"
-                    'cmd2 = New SqlCommand(conn, Con2)
+                    'cmd2 = New MySqlCommand(conn, Con2)
                     'cmd2.ExecuteNonQuery()
                     'Con2.Close()
                     'txt_permitNumber.Text = permit_no
@@ -635,7 +639,7 @@ Public Class MayorsPermitControl
                     qrcodestr = mydate & " " & mAccountNo & " TC "
                     conn = "INSERT INTO cho_qrcode_dummy (descriptiontext, forwardedID, Type) " _
                       & "VALUES ('" & qrcodestr & "', '" & temp_applicationid & "', 'MP_ONLINE')"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     cmd2.ExecuteNonQuery()
                     'MsgBox("Health Certificate Record Successfully Saved", vbOKOnly & vbInformation, "Tacloban Health Office Management System")
                     Con2.Close()
@@ -696,13 +700,13 @@ Public Class MayorsPermitControl
 
             'insert to business_permit_status as new
 
-            Con2 = New SqlConnection(cs)
+            Con2 = New MySqlConnection(cs)
             Con2.Open()
 
 
             conn = "INSERT INTO business_permit_status (AccountNo, BusinessID, DatePending, Status, DatePrinted, PermitNo, UserID, Remarks, Year) " _
              & "VALUES ('" & txt_AccountNo.Text & "', '" & mbusinessID & "', '" & mytimestamp & "', 'D' , '" & mytimestamp & "', '" & permit_no & "', '" & userid & "', '" & txt_remarks.Text & "', '" & Date.Now.Year & "')"
-            cmd2 = New SqlCommand(conn, Con2)
+            cmd2 = New MySqlCommand(conn, Con2)
             cmd2.ExecuteNonQuery()
             Con2.Close()
             txt_permitNumber.Text = permit_no
@@ -710,12 +714,12 @@ Public Class MayorsPermitControl
 
 
             'get lasst applicationid
-            Con2 = New SqlConnection(cs)
+            Con2 = New MySqlConnection(cs)
             Con2.Open()
 
 
             conn = "SELECT * FROM business_permit_status ORDER BY permitappid DESC LIMIT 1"
-            cmd2 = New SqlCommand(conn, Con2)
+            cmd2 = New MySqlCommand(conn, Con2)
             rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr2.Read = True Then
 
@@ -724,10 +728,10 @@ Public Class MayorsPermitControl
             End If
             Con2.Close()
 
-            'Con2 = New SqlConnection(cs)
+            'Con2 = New MySqlConnection(cs)
             'Con2.Open()
             'conn = "UPDATE business_applicationstatus_dtl set IsPrinted = '1', Printed_dttime = '" & mytimestamp & "' WHERE applicationID='" & applicationID_search & "'"
-            'cmd2 = New SqlCommand(conn, Con2)
+            'cmd2 = New MySqlCommand(conn, Con2)
             'cmd2.ExecuteNonQuery()
             'Con2.Close()
 
@@ -744,7 +748,7 @@ Public Class MayorsPermitControl
             qrcodestr = mydate & " " & mAccountNo & " TC "
             conn = "INSERT INTO cho_qrcode_dummy (descriptiontext, forwardedID, Type) " _
               & "VALUES ('" & qrcodestr & "', '" & temp_applicationid & "', 'MP_WALKIN')"
-            cmd2 = New SqlCommand(conn, Con2)
+            cmd2 = New MySqlCommand(conn, Con2)
             cmd2.ExecuteNonQuery()
             'MsgBox("Health Certificate Record Successfully Saved", vbOKOnly & vbInformation, "Tacloban Health Office Management System")
             Con2.Close()

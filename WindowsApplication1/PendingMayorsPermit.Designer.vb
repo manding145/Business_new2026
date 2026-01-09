@@ -52,7 +52,6 @@ Partial Class PendingMayorsPermit
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PanelAppoinment = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.BtnSearchRecord = New System.Windows.Forms.Button()
@@ -62,16 +61,6 @@ Partial Class PendingMayorsPermit
         Me.cmb_appointmentstatus = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -80,7 +69,17 @@ Partial Class PendingMayorsPermit
         Me.Column6 = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -317,19 +316,6 @@ Partial Class PendingMayorsPermit
         Me.PanelAppoinment.Size = New System.Drawing.Size(888, 448)
         Me.PanelAppoinment.TabIndex = 88
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Red
-        Me.Label10.Location = New System.Drawing.Point(10, 358)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(858, 19)
-        Me.Label10.TabIndex = 160
-        Me.Label10.Text = "NOTE: FOR ONLINE Please generate Permit using walk in issuace then proceed to sca" & _
-    "nning and send online using upload button in the row"
-        Me.Label10.Visible = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -443,7 +429,7 @@ Partial Class PendingMayorsPermit
         Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.ColumnHeadersHeight = 35
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column2, Me.Column4, Me.Column1, Me.Column5, Me.Column6, Me.Column8, Me.Column7, Me.Column9})
+        Me.DataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column2, Me.Column4, Me.Column1, Me.Column5, Me.Column6, Me.Column8, Me.Column7})
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -456,7 +442,7 @@ Partial Class PendingMayorsPermit
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGrid.EnableHeadersVisualStyles = False
-        Me.DataGrid.Location = New System.Drawing.Point(7, 70)
+        Me.DataGrid.Location = New System.Drawing.Point(9, 63)
         Me.DataGrid.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
@@ -478,6 +464,70 @@ Partial Class PendingMayorsPermit
         Me.DataGrid.Size = New System.Drawing.Size(875, 334)
         Me.DataGrid.TabIndex = 132
         '
+        'Column3
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Format = "g"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column3.HeaderText = "PAID DATE"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 200
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "ApplicationID"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Visible = False
+        '
+        'Column4
+        '
+        DataGridViewCellStyle4.Format = "#"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column4.HeaderText = "BUSINESS ID"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 150
+        '
+        'Column1
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column1.HeaderText = "ACCOUNT NO"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 200
+        '
+        'Column5
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.Format = "#"
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Column5.HeaderText = "STATUS"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 120
+        '
+        'Column6
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle7
+        Me.Column6.HeaderText = "MAYORS PERMIT"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column6.Width = 150
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "BRGY CLEARANCE"
+        Me.Column8.Name = "Column8"
+        Me.Column8.Visible = False
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "permitappid"
+        Me.Column7.Name = "Column7"
+        Me.Column7.Visible = False
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
@@ -498,6 +548,19 @@ Partial Class PendingMayorsPermit
         Me.Label2.Size = New System.Drawing.Size(124, 21)
         Me.Label2.TabIndex = 86
         Me.Label2.Text = "Brgy Clearance"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Red
+        Me.Label10.Location = New System.Drawing.Point(10, 358)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(858, 19)
+        Me.Label10.TabIndex = 160
+        Me.Label10.Text = "NOTE: FOR ONLINE Please generate Permit using walk in issuace then proceed to sca" & _
+    "nning and send online using upload button in the row"
+        Me.Label10.Visible = False
         '
         'PictureBox3
         '
@@ -572,74 +635,6 @@ Partial Class PendingMayorsPermit
         Me.PictureBox5.TabIndex = 0
         Me.PictureBox5.TabStop = False
         '
-        'Column3
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Format = "g"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column3.HeaderText = "PAID DATE"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 200
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "ApplicationID"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Visible = False
-        '
-        'Column4
-        '
-        DataGridViewCellStyle4.Format = "#"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column4.HeaderText = "BUSINESS ID"
-        Me.Column4.Name = "Column4"
-        '
-        'Column1
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column1.HeaderText = "ACCOUNT NO"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 200
-        '
-        'Column5
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Format = "#"
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Column5.HeaderText = "STATUS"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 120
-        '
-        'Column6
-        '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle7
-        Me.Column6.HeaderText = "MAYORS PERMIT"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column6.Width = 150
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "BRGY CLEARANCE"
-        Me.Column8.Name = "Column8"
-        Me.Column8.Visible = False
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "permitappid"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Visible = False
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Type"
-        Me.Column9.Name = "Column9"
-        '
         'PendingMayorsPermit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -707,14 +702,6 @@ Partial Class PendingMayorsPermit
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Panel6 As System.Windows.Forms.Panel
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents lblcountissued_W As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -723,5 +710,12 @@ Partial Class PendingMayorsPermit
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewLinkColumn
     Friend WithEvents Column8 As System.Windows.Forms.DataGridViewLinkColumn
     Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Panel6 As System.Windows.Forms.Panel
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents lblcountissued_W As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class

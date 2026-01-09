@@ -25,11 +25,16 @@ Partial Class PrintBarangayPermit
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        'Me.RptMayorsPermit1 = New WindowsApplication1.RptMayorsPermit()
-        'Me.RptMayorsPermit2 = New WindowsApplication1.RptMayorsPermit()
-        'Me.RptMayorsPermit3 = New WindowsApplication1.RptMayorsPermit()
-        'Me.RptMayorsPermit4 = New WindowsApplication1.RptMayorsPermit()
-
+        Me.RptMayorsPermit1 = New WindowsApplication1.RptMayorsPermit()
+        Me.RptMayorsPermit2 = New WindowsApplication1.RptMayorsPermit()
+        Me.RptMayorsPermit3 = New WindowsApplication1.RptMayorsPermit()
+        Me.RptMayorsPermit4 = New WindowsApplication1.RptMayorsPermit()
+        Me.SampleMayorsPermit6 = New WindowsApplication1.SampleMayorsPermit()
+        Me.SampleMayorsPermit5 = New WindowsApplication1.SampleMayorsPermit()
+        Me.SampleMayorsPermit4 = New WindowsApplication1.SampleMayorsPermit()
+        Me.SampleMayorsPermit3 = New WindowsApplication1.SampleMayorsPermit()
+        Me.SampleMayorsPermit2 = New WindowsApplication1.SampleMayorsPermit()
+        Me.SampleMayorsPermit1 = New WindowsApplication1.SampleMayorsPermit()
         Me.SuspendLayout()
         '
         'Button2
@@ -111,6 +116,14 @@ Partial Class PrintBarangayPermit
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-
-    
+    Friend WithEvents RptMayorsPermit1 As WindowsApplication1.RptMayorsPermit
+    Friend WithEvents RptMayorsPermit2 As WindowsApplication1.RptMayorsPermit
+    Friend WithEvents RptMayorsPermit3 As WindowsApplication1.RptMayorsPermit
+    Friend WithEvents RptMayorsPermit4 As WindowsApplication1.RptMayorsPermit
+    Friend WithEvents SampleMayorsPermit6 As WindowsApplication1.SampleMayorsPermit
+    Friend WithEvents SampleMayorsPermit5 As WindowsApplication1.SampleMayorsPermit
+    Friend WithEvents SampleMayorsPermit4 As WindowsApplication1.SampleMayorsPermit
+    Friend WithEvents SampleMayorsPermit3 As WindowsApplication1.SampleMayorsPermit
+    Friend WithEvents SampleMayorsPermit2 As WindowsApplication1.SampleMayorsPermit
+    Friend WithEvents SampleMayorsPermit1 As WindowsApplication1.SampleMayorsPermit
 End Class

@@ -1,5 +1,5 @@
-﻿Imports System.Data.SqlClient
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
+Imports System.Data.SqlClient
 Imports System.IO
 Public Class SearchWalkIn_BrgyClearance
     Dim SearchAccountNo As String
@@ -13,7 +13,7 @@ Public Class SearchWalkIn_BrgyClearance
         SearchAccountNo = TxtLetter.Text & "-" & TxtNumber.Text
 
 
-        conn = "SELECT * from ONLINE.BusinessRecord_HDR WHERE ONLINE.BusinessRecord_HDR.AccountNo = '" & SearchAccountNo & "'"
+        conn = "SELECT * from BPLS.BusinessRecord_HDR WHERE BPLS.BusinessRecord_HDR.AccountNo = '" & SearchAccountNo & "'"
         Con4 = New SqlConnection(cs1)
         Con4.Open()
         cmd4 = New SqlCommand(conn, Con4)
@@ -44,10 +44,10 @@ Public Class SearchWalkIn_BrgyClearance
 
 
 
-                Con2 = New SqlConnection(cs)
+                Con2 = New MySqlConnection(cs)
                 Con2.Open()
-                conn = "SELECT * FROM ONLINE.business_brgyclearance_status where AccountNo ='" & SearchAccountNo & "' and Year='" & Date.Now.Year & "'"
-                cmd2 = New SqlCommand(conn, Con2)
+                conn = "SELECT * FROM business_brgyclearance_status where AccountNo ='" & SearchAccountNo & "' and Year='" & Date.Now.Year & "'"
+                cmd2 = New MySqlCommand(conn, Con2)
                 rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                 If rdr2.Read = True Then
                     .BtnPreview1.Visible = True
@@ -65,10 +65,10 @@ Public Class SearchWalkIn_BrgyClearance
 
 
 
-                'Con2 = New MySqlConnection(cs)
+                    'Con2 = New MySqlConnection(cs)
                     'Con2.Open()
                     'conn = "SELECT * FROM business_permit_status WHERE AccountNo='" & SearchAccountNo & "' and Year ='" & Date.Now.Year & "'"
-                'cmd2 = New MySqlCommand(conn, Con2)
+                    'cmd2 = New MySqlCommand(conn, Con2)
                     'rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                     'If rdr2.Read = True Then
                     '    BarangayClearanceControl.temp_applicationid = rdr2("permitappid")
@@ -107,15 +107,15 @@ Public Class SearchWalkIn_BrgyClearance
               & "BPLS.BusinessDetail.Year = '" & Date.Now.Year & "' " _
               & "AND BPLS.BusinessDetail.MainLine = '1' " _
               & "AND BPLS.BusinessRecord_HDR.AccountNo = '" & SearchAccountNo & "' "
-                Con1 = New SqlConnection(cs1)
+                    Con1 = New SqlConnection(cs1)
                     Con1.Open()
-                cmd1 = New SqlCommand(conn, Con1)
+                    cmd1 = New SqlCommand(conn, Con1)
                     rdr1 = cmd1.ExecuteReader(CommandBehavior.CloseConnection)
                     If rdr1.Read = True Then
                         conn3 = "SELECT sum(BPLS.BusinessLedger.AmountPaid) as AmountPaid1 FROM BPLS.BusinessLedger WHERE BPLS.BusinessLedger.BusinessID = '" & rdr1("BusinessID") & "' and BPLS.BusinessLedger.[Year] ='" & Date.Now.Year & "' and (BPLS.BusinessLedger.Cancelled is null or BPLS.BusinessLedger.Cancelled =0)"
-                    Con3 = New SqlConnection(cs3)
+                        Con3 = New SqlConnection(cs3)
                         Con3.Open()
-                    cmd3 = New SqlCommand(conn3, Con3)
+                        cmd3 = New SqlCommand(conn3, Con3)
                         rdr3 = cmd3.ExecuteReader(CommandBehavior.CloseConnection)
                         If rdr3.Read = True Then
 
@@ -144,10 +144,10 @@ Public Class SearchWalkIn_BrgyClearance
                         Try
 
 
-                            conn = "SELECT * from ONLINE.business_barangay WHERE BarangayId='" & rdr1("BarangayID") & "'"
-                            Con = New SqlConnection(cs)
+                            conn = "SELECT * from business_barangay WHERE BarangayId='" & rdr1("BarangayID") & "'"
+                            Con = New MySqlConnection(cs)
                             Con.Open()
-                            cmd = New SqlCommand(conn, Con)
+                            cmd = New MySqlCommand(conn, Con)
                             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
                             Do While rdr.Read = True
                                 .cmb_signatories.Text = rdr("PunongBarangay").ToString
@@ -179,9 +179,9 @@ Public Class SearchWalkIn_BrgyClearance
                         End If
                         Con3.Close()
                         conn3 = "SELECT BusinessLedger.ORNumber, BusinessLedger.ORDate FROM BPLS.BusinessLedger WHERE BPLS.BusinessLedger.BusinessID = '" & rdr1("BusinessID") & "' and BPLS.BusinessLedger.[Year] ='" & Date.Now.Year & "' and (BPLS.BusinessLedger.[Cancelled] = 0 OR BPLS.BusinessLedger.[Cancelled] IS NULL)    order by BPLS.BusinessLedger.ORDate DESC"
-                    Con3 = New SqlConnection(cs3)
+                        Con3 = New SqlConnection(cs3)
                         Con3.Open()
-                    cmd3 = New SqlCommand(conn3, Con3)
+                        cmd3 = New SqlCommand(conn3, Con3)
                         rdr3 = cmd3.ExecuteReader(CommandBehavior.CloseConnection)
                         If rdr3.Read = True Then
 

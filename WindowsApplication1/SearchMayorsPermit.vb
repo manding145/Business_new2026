@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports MySql.Data.MySqlClient
 Public Class SearchMayorsPermit
 
     Private Sub SearchMayorsPermit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -14,9 +14,9 @@ Public Class SearchMayorsPermit
              & "business_permit_status INNER JOIN business_record_hdr ON business_record_hdr.accountno =  business_permit_status.AccountNo " & _
             "where business_permit_status.AccountNo LIKE '%" & txt_accountno.Text & "' and business_record_hdr.b_name LIKE '%" & txt_businessName.Text & "' "
 
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr.Read = True
                 PendingMayorsPermit.DataGrid.Rows.Add(rdr("DatePending"), rdr("ApplicationID"), rdr("BusinessID"), rdr("AccountNo"), rdr("Status"), "VIEW", rdr("BusinessID"))

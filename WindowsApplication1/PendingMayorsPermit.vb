@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports MySql.Data.MySqlClient
+Imports System.Data.SqlClient
 Imports System.IO
 Public Class PendingMayorsPermit
 
@@ -23,9 +24,9 @@ Public Class PendingMayorsPermit
 
 
         '        conn1 = "SELECT * from business_permit_status where BusinessID = '" & rdr1("BusinessID") & "'"
-        '        Con = New SqlConnection(cs)
+        '        Con = New MySqlConnection(cs)
         '        Con.Open()
-        '        cmd = New SqlCommand(conn1, Con)
+        '        cmd = New MySqlCommand(conn1, Con)
         '        rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
         '        Do While rdr.Read = True
         '            pendingpermit = "VERIFIED"
@@ -100,9 +101,9 @@ Public Class PendingMayorsPermit
                & " COUNT(permitappid) as no_pending " _
                & " FROM business_permit_status where status ='D' and Year(DatePrinted) = '" & Date.Now.Year & "' and TypeApplication='ONLINE'"
 
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.Read = True Then
 
@@ -121,9 +122,9 @@ Public Class PendingMayorsPermit
                & " COUNT(permitappid) as no_pending " _
                & " FROM business_permit_status where status ='D' and Year(DatePrinted) = '" & Date.Now.Year & "' and (TypeApplication='WALKIN' OR TypeApplication is null)"
 
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.Read = True Then
 
@@ -150,7 +151,7 @@ Public Class PendingMayorsPermit
         DataGrid.Rows.Clear()
         lblCount.Visible = False
         Try
-            conn_ms = "SELECT bat.delivery_type , bat.businessname, bat.accountno, bsd.applicationID, bsd.IsPrinted, bsd.payment_dttime, bsd.IsPaid FROM ONLINE.business_applicationstatus_dtl bsd INNER JOIN ONLINE.business_application_tbl bat ON bat.applicationID = bsd.applicationID INNER JOIN ONLINE.business_assessment_dtl bad ON bad.applicationID = bsd.applicationID WHERE bsd.payment_status = 'D' AND bsd.IsPrinted = 'P' ORDER BY bsd.payment_dttime ASC;"
+            conn_ms = "SELECT bat.businessname, bat.accountno, bsd.applicationID, bsd.IsPrinted, bsd.payment_dttime, bsd.IsPaid FROM ONLINE.business_applicationstatus_dtl bsd INNER JOIN ONLINE.business_application_tbl bat ON bat.applicationID = bsd.applicationID INNER JOIN ONLINE.business_assessment_dtl bad ON bad.applicationID = bsd.applicationID WHERE bsd.payment_status = 'D' AND bsd.IsPrinted = 'P' ORDER BY bsd.payment_dttime ASC;"
 
             Con_ms = New SqlConnection(mcs)
             Con_ms.Open()
@@ -167,11 +168,11 @@ Public Class PendingMayorsPermit
                     action = "VIEW"
                 End If
 
-                'Con2 = New SqlConnection(cs)
+                'Con2 = New MySqlConnection(cs)
                 'Con2.Open()
                 'Dim permitappid As Integer
                 'conn = "SELECT * FROM business_permit_status WHERE BusinessID='" & rdr_ms("businessid") & "' and ApplicationID='" & rdr_ms("applicationID") & "' "
-                'cmd2 = New SqlCommand(conn, Con2)
+                'cmd2 = New MySqlCommand(conn, Con2)
                 'rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                 'If rdr2.Read = True Then
 
@@ -182,7 +183,7 @@ Public Class PendingMayorsPermit
 
 
 
-                DataGrid.Rows.Add(rdr_ms("payment_dttime"), rdr_ms("applicationID"), "", rdr_ms("accountno"), "Pending", "Upload", "", rdr_ms("applicationID"), rdr_ms("delivery_type"))
+                DataGrid.Rows.Add(rdr_ms("payment_dttime"), rdr_ms("applicationID"), "", rdr_ms("accountno"), "Pending", "Upload", "", rdr_ms("applicationID"))
 
             Loop
 
@@ -211,9 +212,9 @@ Public Class PendingMayorsPermit
         'Try
         '    conn = "SELECT * FROM business_permit_status WHERE Status ='P' ORDER BY DatePending ASC"
 
-        '    Con = New SqlConnection(cs)
+        '    Con = New MySqlConnection(cs)
         '    Con.Open()
-        '    cmd = New SqlCommand(conn, Con)
+        '    cmd = New MySqlCommand(conn, Con)
         '    rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
         '    Do While rdr.Read = True
 
@@ -364,9 +365,9 @@ Public Class PendingMayorsPermit
 
 
                                 'conn = "SELECT business_record_hdr.email_add FROM business_record_hdr WHERE business_record_hdr.accountno ='" & DataGrid.Item(3, DataGrid.CurrentRow.Index).Value & "'"
-                                'Con = New SqlConnection(cs)
+                                'Con = New MySqlConnection(cs)
                                 'Con.Open()
-                                'cmd = New SqlCommand(conn, Con)
+                                'cmd = New MySqlCommand(conn, Con)
                                 'rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
                                 'If rdr.Read = True Then
 
@@ -415,6 +416,9 @@ Public Class PendingMayorsPermit
 
                             End If
                             Con1.Close()
+
+
+
 
 
                             conn = "SELECT " _
@@ -554,9 +558,9 @@ Public Class PendingMayorsPermit
 
 
                         'conn = "SELECT business_record_hdr.email_add FROM business_record_hdr WHERE business_record_hdr.accountno ='" & DataGrid.Item(3, DataGrid.CurrentRow.Index).Value & "'"
-                        'Con = New SqlConnection(cs)
+                        'Con = New MySqlConnection(cs)
                         'Con.Open()
-                        'cmd = New SqlCommand(conn, Con)
+                        'cmd = New MySqlCommand(conn, Con)
                         'rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
                         'If rdr.Read = True Then
 
@@ -590,10 +594,10 @@ Public Class PendingMayorsPermit
                     '.txt_applicationnumber.Text = rdr4("ApplicationNumber").ToString
                     '.txt_applicationdate.Text = rdr4("ApplicationDate").ToString
 
-                    Con2 = New SqlConnection(cs)
+                    Con2 = New MySqlConnection(cs)
                     Con2.Open()
                     conn = "SELECT * FROM business_brgyclearance_status where BusinessID ='" & DataGrid.Item(2, DataGrid.CurrentRow.Index).Value & "' and Year='" & Date.Now.Year & "'"
-                    cmd2 = New SqlCommand(conn, Con2)
+                    cmd2 = New MySqlCommand(conn, Con2)
                     rdr2 = cmd2.ExecuteReader(CommandBehavior.CloseConnection)
                     If rdr2.Read = True Then
                         .BtnPreview1.Visible = True
@@ -677,9 +681,9 @@ Public Class PendingMayorsPermit
 
 
                                 conn = "SELECT * from business_barangay WHERE BarangayId='" & rdr1("BarangayID") & "'"
-                                Con = New SqlConnection(cs)
+                                Con = New MySqlConnection(cs)
                                 Con.Open()
-                                cmd = New SqlCommand(conn, Con)
+                                cmd = New MySqlCommand(conn, Con)
                                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
                                 Do While rdr.Read = True
                                     .cmb_signatories.Text = rdr("PunongBarangay").ToString
@@ -795,9 +799,9 @@ Public Class PendingMayorsPermit
             Try
                 conn = "SELECT * FROM business_permit_status WHERE Status ='D' and DatePrinted  = '" & Format((dt_Appoinment.Value), "yyyy-MM-dd") & "' ORDER BY DatePending ASC"
 
-                Con = New SqlConnection(cs)
+                Con = New MySqlConnection(cs)
                 Con.Open()
-                cmd = New SqlCommand(conn, Con)
+                cmd = New MySqlCommand(conn, Con)
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
                 Do While rdr.Read = True
 
@@ -822,9 +826,9 @@ Public Class PendingMayorsPermit
         Try
             conn = "SELECT * FROM business_permit_status WHERE status ='D' and Year(DatePrinted) = '" & Date.Now.Year & "' and TypeApplication='ONLINE' ORDER BY DatePrinted ASC"
 
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr.Read = True
 
@@ -881,9 +885,9 @@ Public Class PendingMayorsPermit
         Try
             conn = "SELECT * FROM business_permit_status WHERE status ='D' and Year(DatePrinted) = '" & Date.Now.Year & "' and (TypeApplication='WALKIN' OR TypeApplication is null) ORDER BY DatePrinted ASC"
 
-            Con = New SqlConnection(cs)
+            Con = New MySqlConnection(cs)
             Con.Open()
-            cmd = New SqlCommand(conn, Con)
+            cmd = New MySqlCommand(conn, Con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr.Read = True
 

@@ -1,8 +1,8 @@
 ﻿Imports CrystalDecisions.Shared
+Imports MySql.Data.MySqlClient
 Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.ReportSource
 Imports CrystalDecisions.Web
-Imports System.Data.SqlClient
 
 
 
@@ -121,7 +121,7 @@ Public Class PrintBarangayPermit
 
 
         End With
-        rpt.SetDatabaseLogon("sa", "@dm1n1str@t0r")
+        rpt.SetDatabaseLogon("usera2", "passa2")
         CrystalReportViewer1.ReportSource = rpt
         CrystalReportViewer1.ParameterFieldInfo = pfields
         CrystalReportViewer1.Show()
@@ -167,15 +167,15 @@ Public Class PrintBarangayPermit
             Dim fullname As String
             With MayorsPermitControl
                 fullname = .mAccountNo
-                Con = New SqlConnection(cs)
+                Con = New MySqlConnection(cs)
                 Con.Open()
                 Dim filename As String
                 filename = folder_directory & .mAccountNo & "_BarangayClearance.pdf"
                 conn = "INSERT INTO email_send (ApplicationID, datesend, email, fullname, attachment_type, FileDirectory, status) " _
                    & "VALUES ('" & .mAccountNo & "', '" & Format((Date.Now), "yyyy-MM-dd") & "', '" & .txt_email.Text & "', '" & fullname & "', 'business_brgyclearance', @filename, '2')"
-                cmd = New SqlCommand(conn, Con)
+                cmd = New MySqlCommand(conn, Con)
 
-                cmd.Parameters.Add("@filename", SqlDbType.VarChar).Value = filename
+                cmd.Parameters.Add("@filename", MySqlDbType.VarChar).Value = filename
 
                 cmd.ExecuteNonQuery()
                 Con.Close()
@@ -230,5 +230,43 @@ Public Class PrintBarangayPermit
 
     End Sub
 
-    
+    Private Sub SampleMayorsPermit1_InitReport(sender As Object, e As EventArgs) Handles SampleMayorsPermit1.InitReport
+
+    End Sub
+
+    Private Sub SampleMayorsPermit2_InitReport(sender As Object, e As EventArgs) Handles SampleMayorsPermit2.InitReport
+
+    End Sub
+
+    Private Sub SampleMayorsPermit3_InitReport(sender As Object, e As EventArgs) Handles SampleMayorsPermit3.InitReport
+
+    End Sub
+
+    Private Sub SampleMayorsPermit4_InitReport(sender As Object, e As EventArgs) Handles SampleMayorsPermit4.InitReport
+
+    End Sub
+
+    Private Sub SampleMayorsPermit5_InitReport(sender As Object, e As EventArgs) Handles SampleMayorsPermit5.InitReport
+
+    End Sub
+
+    Private Sub SampleMayorsPermit6_InitReport(sender As Object, e As EventArgs) Handles SampleMayorsPermit6.InitReport
+
+    End Sub
+
+    Private Sub RptMayorsPermit4_InitReport(sender As Object, e As EventArgs) Handles RptMayorsPermit4.InitReport
+
+    End Sub
+
+    Private Sub RptMayorsPermit3_InitReport(sender As Object, e As EventArgs) Handles RptMayorsPermit3.InitReport
+
+    End Sub
+
+    Private Sub RptMayorsPermit2_InitReport(sender As Object, e As EventArgs) Handles RptMayorsPermit2.InitReport
+
+    End Sub
+
+    Private Sub RptMayorsPermit1_InitReport(sender As Object, e As EventArgs) Handles RptMayorsPermit1.InitReport
+
+    End Sub
 End Class

@@ -30,10 +30,13 @@ Partial Class Payment
         Me.useraccountid = New System.Windows.Forms.TextBox()
         Me.AxAcroPDF3 = New AxAcroPDFLib.AxAcroPDF()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.fire_file = New System.Windows.Forms.TextBox()
         Me.assessment_file = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.ctc_file = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -159,10 +162,13 @@ Partial Class Payment
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.fire_file)
         Me.GroupBox2.Controls.Add(Me.assessment_file)
+        Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.ctc_file)
         Me.GroupBox2.Controls.Add(Me.Label15)
@@ -173,6 +179,16 @@ Partial Class Payment
         Me.GroupBox2.TabIndex = 183
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Payment Details"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(413, 171)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(57, 26)
+        Me.Button3.TabIndex = 184
+        Me.Button3.Text = "Upload"
+        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Visible = False
         '
         'Button2
         '
@@ -201,6 +217,20 @@ Partial Class Payment
         Me.Label8.TabIndex = 176
         Me.Label8.Text = "Business Tax Assessment File"
         '
+        'fire_file
+        '
+        Me.fire_file.BackColor = System.Drawing.Color.AliceBlue
+        Me.fire_file.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.fire_file.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.fire_file.Enabled = False
+        Me.fire_file.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fire_file.Location = New System.Drawing.Point(10, 171)
+        Me.fire_file.Multiline = True
+        Me.fire_file.Name = "fire_file"
+        Me.fire_file.Size = New System.Drawing.Size(409, 26)
+        Me.fire_file.TabIndex = 181
+        Me.fire_file.Visible = False
+        '
         'assessment_file
         '
         Me.assessment_file.BackColor = System.Drawing.Color.AliceBlue
@@ -213,6 +243,16 @@ Partial Class Payment
         Me.assessment_file.Name = "assessment_file"
         Me.assessment_file.Size = New System.Drawing.Size(410, 26)
         Me.assessment_file.TabIndex = 177
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(7, 155)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(53, 13)
+        Me.Label13.TabIndex = 180
+        Me.Label13.Text = "Fire Local"
+        Me.Label13.Visible = False
         '
         'Label14
         '
@@ -309,6 +349,7 @@ Partial Class Payment
         Me.ctc_fire.Size = New System.Drawing.Size(242, 26)
         Me.ctc_fire.TabIndex = 181
         Me.ctc_fire.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ctc_fire.Visible = False
         '
         'tax_amount
         '
@@ -333,6 +374,7 @@ Partial Class Payment
         Me.Label12.Size = New System.Drawing.Size(53, 13)
         Me.Label12.TabIndex = 180
         Me.Label12.Text = "Fire Local"
+        Me.Label12.Visible = False
         '
         'Label11
         '
@@ -603,12 +645,15 @@ Partial Class Payment
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Public WithEvents fire_file As System.Windows.Forms.TextBox
     Public WithEvents assessment_file As System.Windows.Forms.TextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Public WithEvents ctc_file As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Public WithEvents totalpaid As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF

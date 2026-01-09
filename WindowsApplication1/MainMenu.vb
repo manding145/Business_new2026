@@ -120,7 +120,14 @@ Public Class MainMenu
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-        Appointment.ShowDialog()
+        
+            Dim NewMDIChild As New Appointment()
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+            'Panel3.Visible = False
+            'SettingsMenuStrip1.Visible = False
+            'ReportMenuStrip.Visible = False
+        
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
