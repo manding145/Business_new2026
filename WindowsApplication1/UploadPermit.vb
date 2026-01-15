@@ -75,7 +75,7 @@ Public Class UploadPermit
 
             Con_ms1 = New SqlConnection(mcs)
             Con_ms1.Open()
-            conn_ms1 = "UPDATE ONLINE.business_applicationstatus_dtl set IsPrinted ='D',  Printed_dttime='" & DateTime.Now() & "' where ApplicationID='" & TxtApplicationNo.Text & "'"
+            conn_ms1 = "UPDATE ONLINE.business_applicationstatus_dtl set IsPrinted ='D',  Printed_dttime='" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") & "' where ApplicationID='" & TxtApplicationNo.Text & "'"
             cmd_ms1 = New SqlCommand(conn_ms1, Con_ms1)
             cmd_ms1.ExecuteNonQuery()
             Con_ms1.Close()
@@ -97,18 +97,13 @@ Public Class UploadPermit
 
 
 
-
-
-
-
-
             Con_ms = New SqlConnection(mcs)
             Con_ms.Open()
             conn = "INSERT INTO ONLINE.email_outbox (userid, assessment_path,accountno, email, Subject, fullname, referencecode, datesend) " _
                & "VALUES ('" & useraccountid.Text & "','" & filePath & "', '" & TxtAccountNo.Text & "', '" & email & "', 'Business Permit Issuance' ,@BusinessName, '" & referencono.Text & "', @Date)"
             cmd_ms = New SqlCommand(conn, Con_ms)
             cmd_ms.Parameters.Add("@BusinessName", SqlDbType.VarChar).Value = TxtBusinessName.Text
-            cmd_ms.Parameters.Add("@Date", SqlDbType.VarChar).Value = DateAndTime.Now()
+            cmd_ms.Parameters.Add("@Date", SqlDbType.DateTime).Value = DateAndTime.Now()
             cmd_ms.ExecuteNonQuery()
             Con_ms.Close()
 

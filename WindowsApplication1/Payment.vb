@@ -222,7 +222,7 @@ Public Class Payment
 
             cmd_ms.Parameters.Add("@useraccountid", SqlDbType.Int).Value = useraccountid.Text
 
-            cmd_ms.Parameters.Add("@Date", SqlDbType.VarChar).Value = DateAndTime.Now()
+            cmd_ms.Parameters.Add("@Date", SqlDbType.DateTime).Value = DateAndTime.Now()
             cmd_ms.ExecuteNonQuery()
             Con_ms.Close()
 
