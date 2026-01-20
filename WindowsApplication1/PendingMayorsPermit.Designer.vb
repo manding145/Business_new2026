@@ -39,24 +39,32 @@ Partial Class PendingMayorsPermit
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.lbl_countpending = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblcountissued_W = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PanelAppoinment = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.BtnSearchRecord = New System.Windows.Forms.Button()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.txt_name = New System.Windows.Forms.TextBox()
         Me.cmb_appointmentstatus = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -71,31 +79,23 @@ Partial Class PendingMayorsPermit
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAppoinment.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label13
@@ -165,6 +165,15 @@ Partial Class PendingMayorsPermit
         Me.Label6.TabIndex = 89
         Me.Label6.Text = "Mayors Permit"
         '
+        'PictureBox9
+        '
+        Me.PictureBox9.Image = Global.WindowsApplication1.My.Resources.Resources.reload
+        Me.PictureBox9.Location = New System.Drawing.Point(195, 5)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(31, 34)
+        Me.PictureBox9.TabIndex = 88
+        Me.PictureBox9.TabStop = False
+        '
         'lbl_countpending
         '
         Me.lbl_countpending.AutoSize = True
@@ -188,6 +197,15 @@ Partial Class PendingMayorsPermit
         Me.Label4.TabIndex = 86
         Me.Label4.Text = "Pending Online "
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = Global.WindowsApplication1.My.Resources.Resources.certificate
+        Me.PictureBox5.Location = New System.Drawing.Point(10, 15)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(79, 68)
+        Me.PictureBox5.TabIndex = 0
+        Me.PictureBox5.TabStop = False
+        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.White
@@ -210,6 +228,15 @@ Partial Class PendingMayorsPermit
         Me.Label7.Size = New System.Drawing.Size(121, 21)
         Me.Label7.TabIndex = 90
         Me.Label7.Text = "Mayors Permit"
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.WindowsApplication1.My.Resources.Resources.printer
+        Me.PictureBox6.Location = New System.Drawing.Point(9, 18)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(79, 68)
+        Me.PictureBox6.TabIndex = 0
+        Me.PictureBox6.TabStop = False
         '
         'Timer1
         '
@@ -274,6 +301,15 @@ Partial Class PendingMayorsPermit
         Me.Label12.TabIndex = 86
         Me.Label12.Text = "Printed WalkIn"
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.printer
+        Me.PictureBox4.Location = New System.Drawing.Point(10, 18)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(79, 68)
+        Me.PictureBox4.TabIndex = 0
+        Me.PictureBox4.TabStop = False
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -294,6 +330,15 @@ Partial Class PendingMayorsPermit
         Me.Label3.TabIndex = 86
         Me.Label3.Text = "Walk In " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Issuance"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.report__1_
+        Me.PictureBox2.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(79, 68)
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
+        '
         'PanelAppoinment
         '
         Me.PanelAppoinment.BackColor = System.Drawing.Color.White
@@ -313,19 +358,41 @@ Partial Class PendingMayorsPermit
         Me.PanelAppoinment.Controls.Add(Me.dt_Appoinment)
         Me.PanelAppoinment.Location = New System.Drawing.Point(7, 114)
         Me.PanelAppoinment.Name = "PanelAppoinment"
-        Me.PanelAppoinment.Size = New System.Drawing.Size(888, 448)
+        Me.PanelAppoinment.Size = New System.Drawing.Size(888, 457)
         Me.PanelAppoinment.TabIndex = 88
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Red
+        Me.Label10.Location = New System.Drawing.Point(14, 397)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(858, 19)
+        Me.Label10.TabIndex = 160
+        Me.Label10.Text = "NOTE: FOR ONLINE Please generate Permit using walk in issuace then proceed to sca" & _
+    "nning and send online using upload button in the row"
+        Me.Label10.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(46, 407)
+        Me.Label1.Location = New System.Drawing.Point(49, 423)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(36, 17)
         Me.Label1.TabIndex = 159
         Me.Label1.Text = "Back"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.back_button1
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 416)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(107, 34)
+        Me.PictureBox1.TabIndex = 158
+        Me.PictureBox1.TabStop = False
         '
         'Button8
         '
@@ -343,9 +410,9 @@ Partial Class PendingMayorsPermit
         Me.BtnSearchRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSearchRecord.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSearchRecord.ForeColor = System.Drawing.Color.White
-        Me.BtnSearchRecord.Location = New System.Drawing.Point(640, 312)
+        Me.BtnSearchRecord.Location = New System.Drawing.Point(730, 416)
         Me.BtnSearchRecord.Name = "BtnSearchRecord"
-        Me.BtnSearchRecord.Size = New System.Drawing.Size(185, 31)
+        Me.BtnSearchRecord.Size = New System.Drawing.Size(142, 31)
         Me.BtnSearchRecord.TabIndex = 155
         Me.BtnSearchRecord.Text = "&Search Record"
         Me.BtnSearchRecord.UseVisualStyleBackColor = False
@@ -355,7 +422,7 @@ Partial Class PendingMayorsPermit
         '
         Me.lblCount.AutoSize = True
         Me.lblCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCount.Location = New System.Drawing.Point(806, 401)
+        Me.lblCount.Location = New System.Drawing.Point(809, 412)
         Me.lblCount.Name = "lblCount"
         Me.lblCount.Size = New System.Drawing.Size(19, 20)
         Me.lblCount.TabIndex = 138
@@ -365,11 +432,21 @@ Partial Class PendingMayorsPermit
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(637, 421)
+        Me.Label11.Location = New System.Drawing.Point(640, 432)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(206, 13)
         Me.Label11.TabIndex = 136
         Me.Label11.Text = "*Status - P for Pending,  D- Printed"
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PictureBox8.Image = Global.WindowsApplication1.My.Resources.Resources.search
+        Me.PictureBox8.Location = New System.Drawing.Point(239, 27)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox8.TabIndex = 116
+        Me.PictureBox8.TabStop = False
         '
         'txt_name
         '
@@ -442,7 +519,7 @@ Partial Class PendingMayorsPermit
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGrid.EnableHeadersVisualStyles = False
-        Me.DataGrid.Location = New System.Drawing.Point(9, 63)
+        Me.DataGrid.Location = New System.Drawing.Point(16, 60)
         Me.DataGrid.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
@@ -461,7 +538,7 @@ Partial Class PendingMayorsPermit
         Me.DataGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.DataGrid.RowTemplate.Height = 25
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(875, 334)
+        Me.DataGrid.Size = New System.Drawing.Size(856, 334)
         Me.DataGrid.TabIndex = 132
         '
         'Column3
@@ -549,19 +626,6 @@ Partial Class PendingMayorsPermit
         Me.Label2.TabIndex = 86
         Me.Label2.Text = "Brgy Clearance"
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Red
-        Me.Label10.Location = New System.Drawing.Point(10, 358)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(858, 19)
-        Me.Label10.TabIndex = 160
-        Me.Label10.Text = "NOTE: FOR ONLINE Please generate Permit using walk in issuace then proceed to sca" & _
-    "nning and send online using upload button in the row"
-        Me.Label10.Visible = False
-        '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.report__1_
@@ -570,70 +634,6 @@ Partial Class PendingMayorsPermit
         Me.PictureBox3.Size = New System.Drawing.Size(79, 68)
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.printer
-        Me.PictureBox4.Location = New System.Drawing.Point(10, 18)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(79, 68)
-        Me.PictureBox4.TabIndex = 0
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.report__1_
-        Me.PictureBox2.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(79, 68)
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.back_button1
-        Me.PictureBox1.Location = New System.Drawing.Point(7, 400)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(107, 34)
-        Me.PictureBox1.TabIndex = 158
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.PictureBox8.Image = Global.WindowsApplication1.My.Resources.Resources.search
-        Me.PictureBox8.Location = New System.Drawing.Point(239, 27)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(25, 25)
-        Me.PictureBox8.TabIndex = 116
-        Me.PictureBox8.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = Global.WindowsApplication1.My.Resources.Resources.printer
-        Me.PictureBox6.Location = New System.Drawing.Point(9, 18)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(79, 68)
-        Me.PictureBox6.TabIndex = 0
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.Image = Global.WindowsApplication1.My.Resources.Resources.reload
-        Me.PictureBox9.Location = New System.Drawing.Point(195, 5)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(31, 34)
-        Me.PictureBox9.TabIndex = 88
-        Me.PictureBox9.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = Global.WindowsApplication1.My.Resources.Resources.certificate
-        Me.PictureBox5.Location = New System.Drawing.Point(10, 15)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(79, 68)
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
         '
         'PendingMayorsPermit
         '
@@ -648,26 +648,26 @@ Partial Class PendingMayorsPermit
         Me.Text = "PendingMayorsPermit"
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelAppoinment.ResumeLayout(False)
         Me.PanelAppoinment.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

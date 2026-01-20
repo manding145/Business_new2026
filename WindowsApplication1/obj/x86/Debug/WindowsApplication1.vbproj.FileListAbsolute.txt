@@ -262,3 +262,4 @@ C:\BusinessOnlineRenewal_2025\WindowsApplication1\obj\x86\Debug\WindowsApplicati
 C:\BusinessOnlineRenewal_2025\WindowsApplication1\obj\x86\Debug\WindowsApplication1.ViewAttachmentsPictureBox.resources
 C:\BusinessOnlineRenewal_2025\WindowsApplication1\obj\x86\Debug\WindowsApplication1.ViewAttachments_webcontrol.resources
 C:\BusinessOnlineRenewal_2025\WindowsApplication1\obj\x86\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+C:\BusinessOnlineRenewal_2025\WindowsApplication1\obj\x86\Debug\WindowsApplication1.vbprojResolveAssemblyReference.cache
