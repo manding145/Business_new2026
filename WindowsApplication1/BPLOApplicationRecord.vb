@@ -142,23 +142,8 @@ Public Class BPLOApplicationRecord
         Deny.Show()
     End Sub
 
-    Private Sub panel_track_verification_Paint(sender As Object, e As PaintEventArgs)
 
-    End Sub
-
-    Private Sub BPLOApplicationRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
-
-    End Sub
-
-    Private Sub txt_asses_date_Click(sender As Object, e As EventArgs) Handles txt_asses_date.Click
-
-    End Sub
-
-    Private Sub lblPotential_Click(sender As Object, e As EventArgs) Handles lblPotential.Click
-
+    Private Sub B_CloseApplication_Click(sender As Object, e As EventArgs) Handles B_CloseApplication.Click
+        Closedform.Show()
     End Sub
 End Class

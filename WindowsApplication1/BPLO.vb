@@ -131,6 +131,14 @@ Public Class BPLO
                                 .panel_verified.Visible = False
                                 .panel_denied.Visible = True
                                 .BtnAddNewRecord.Enabled = False
+                                .B_CloseApplication.Enabled = False
+                                .btnDeny.Visible = False
+                            ElseIf rdr_ms("verify_status") = "C" Then
+                                .Panel_pending.Visible = False
+                                .panel_verified.Visible = False
+                                .panel_closed.Visible = True
+                                .BtnAddNewRecord.Enabled = False
+                                .B_CloseApplication.Enabled = False
                                 .btnDeny.Visible = False
                             End If
                             .txt_deniedremarks.Text = rdr_ms("Denied_remarks").ToString
@@ -161,6 +169,14 @@ Public Class BPLO
                                 .txt_veririfacation_date.Text = rdr_ms("verify_deny_dttime")
                                 .txt_verification_user.Text = takngaran
                                 .txt_verification_remarks.Text = "This Application was Denied by:"
+
+                            ElseIf rdr_ms("verify_status").ToString = "C" Then
+                                .panel_track_verification.Visible = True
+                                im_userid = rdr_ms("user_deny").ToString
+                                Call whoisthisuser()
+                                .txt_veririfacation_date.Text = rdr_ms("verify_deny_dttime")
+                                .txt_verification_user.Text = takngaran
+                                .txt_verification_remarks.Text = "This Application was Closed by:"
                             Else
                                 .panel_track_verification.Visible = False
                             End If
@@ -190,6 +206,14 @@ Public Class BPLO
                                 .txt_verification_user.Text = takngaran
                                 .txt_verification_remarks.Text = "This Application was Denied by:"
 
+                            ElseIf rdr_ms("eval_status").ToString = "C" Then
+                                .panel_track_verification.Visible = True
+                                im_userid = rdr_ms("user_deny").ToString
+                                Call whoisthisuser()
+                                .txt_veririfacation_date.Text = rdr_ms("eval_deny_dttime")
+                                .txt_verification_user.Text = takngaran
+                                .txt_verification_remarks.Text = "This Application was Closed by:"
+
                             Else
                                 .panel_track_evaluation.Visible = False
                             End If
@@ -218,6 +242,14 @@ Public Class BPLO
                                 .txt_veririfacation_date.Text = rdr_ms("assess_deny_dttime")
                                 .txt_verification_user.Text = takngaran
                                 .txt_verification_remarks.Text = "This Application was Denied by:"
+
+                            ElseIf rdr_ms("assess_status").ToString = "C" Then
+                                .panel_track_assessment.Visible = True
+                                im_userid = rdr_ms("user_deny").ToString
+                                Call whoisthisuser()
+                                .txt_veririfacation_date.Text = rdr_ms("assess_deny_dttime")
+                                .txt_verification_user.Text = takngaran
+                                .txt_verification_remarks.Text = "This Application was Closed by:"
 
                             Else
                                 .panel_track_assessment.Visible = False
@@ -338,11 +370,12 @@ Public Class BPLO
 
             Con_ms.Close()
 
-
+            Dim mytimestampfrom = dt_Appoinment.Value.ToString("yyyy-MM-dd") & " 00:00:00"
+            Dim mytimestampto = dt_Appoinment1.Value.ToString("yyyy-MM-dd") & " 23:59:00"
 
             conn_ms = "SELECT " _
-           & " COUNT(applicationID) as no_pending " _
-           & " FROM ONLINE.business_applicationstatus_dtl  where verify_status ='V' and verified_timedt like '%" & Format((dt_Appoinment.Value), "yyyy-MM-dd") & "%'"
+           & " COUNT(applicationID) as no_verified " _
+           & " FROM ONLINE.business_applicationstatus_dtl  where verify_status ='V' and  (business_applicationstatus_dtl.verified_timedt between '" & mytimestampfrom & "' and '" & mytimestampto & "')"
 
             Con_ms = New SqlConnection(mcs)
             Con_ms.Open()
@@ -350,12 +383,30 @@ Public Class BPLO
             rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr_ms.Read = True Then
 
-                lblcountissued.Text = rdr_ms("no_pending")
+                lblcountissued.Text = rdr_ms("no_verified")
             Else
                 lblcountissued.Text = "0"
             End If
 
             Con_ms.Close()
+
+
+            ' conn_ms = "SELECT " _
+            '& " COUNT(applicationID) as no_closed " _
+            '& " FROM ONLINE.business_applicationstatus_dtl  where verify_status ='C' and verified_timedt like '%" & Format((dt_Appoinment.Value), "yyyy-MM-dd") & "%'"
+
+            ' Con_ms = New SqlConnection(mcs)
+            ' Con_ms.Open()
+            ' cmd_ms = New SqlCommand(conn_ms, Con_ms)
+            ' rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
+            ' If rdr_ms.Read = True Then
+
+            '     lblcountissued.Text = rdr_ms("no_closed")
+            ' Else
+            '     lblcountissued.Text = "0"
+            ' End If
+
+            ' Con_ms.Close()
 
 
 
@@ -391,6 +442,7 @@ Public Class BPLO
             "business_application_tbl.recordID, " & _
             "business_application_tbl.accountno, " & _
              "business_application_tbl.businessname, " & _
+             "business_application_tbl.applicationtype, " & _
             "business_application_tbl.application_date, " & _
             "business_application_tbl.application_time, " & _
             "business_applicationstatus_dtl.verify_status FROM " & _
@@ -404,7 +456,7 @@ Public Class BPLO
             rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr_ms.Read = True
 
-                DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno"), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW")
+                DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
 
             Loop
 
@@ -426,6 +478,7 @@ Public Class BPLO
             "business_application_tbl.recordID, " & _
             "business_application_tbl.accountno, " & _
             "business_record_hdr.b_name, " & _
+              "business_application_tbl.applicationtype, " & _
             "business_application_tbl.application_date, " & _
             "business_application_tbl.application_time, " & _
             "business_application_tbl.application_status, " & _
@@ -440,7 +493,7 @@ Public Class BPLO
             rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr_ms.Read = True
 
-                DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno"), rdr_ms("b_name"), rdr_ms("verify_status"), "VIEW")
+                DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno").ToString(), rdr_ms("b_name"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
 
             Loop
 
@@ -459,109 +512,174 @@ Public Class BPLO
 
         Try
             If cmb_appointmentstatus.Text = "ALL" Then
+
+
+                Dim mytimestampfrom = dt_Appoinment.Value.ToString("yyyy-MM-dd") & " 00:00:00"
+                Dim mytimestampto = dt_Appoinment1.Value.ToString("yyyy-MM-dd") & " 23:59:00"
+
+
                 conn_ms = "SELECT " & _
             "business_application_tbl.applicationID, " & _
+            "business_application_tbl.RefCode, " & _
             "business_application_tbl.recordID, " & _
             "business_application_tbl.accountno, " & _
-            "business_record_hdr.b_name, " & _
+            "business_application_tbl.businessname, " & _
+            "business_application_tbl.applicationtype, " & _
             "business_application_tbl.application_date, " & _
             "business_application_tbl.application_time, " & _
             "business_applicationstatus_dtl.verify_status " & _
             "FROM " & _
             "ONLINE.business_application_tbl " & _
             "INNER JOIN ONLINE.business_applicationstatus_dtl ON ONLINE.business_application_tbl.applicationID = ONLINE.business_applicationstatus_dtl.applicationID " & _
-            "INNER ONLINE.JOIN business_record_hdr ON ONLINE.business_application_tbl.recordID = ONLINE.business_record_hdr.recordID WHERE (application_date between '" & Format((dt_Appoinment.Value), "yyyy-MM-dd") & "' and '" & Format((dt_Appoinment1.Value), "yyyy-MM-dd") & "') and Isreupload='0' ORDER BY application_date ASC"
+            " WHERE (application_date between '" & mytimestampfrom & "' and '" & mytimestampto & "')  ORDER BY application_date ASC"
                 Con_ms = New SqlConnection(mcs)
                 Con_ms.Open()
                 cmd_ms = New SqlCommand(conn_ms, Con_ms)
                 rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
                 Do While rdr_ms.Read = True
-                    DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno"), rdr_ms("b_name"), rdr_ms("verify_status"), "VIEW")
+                    'DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
+
+                    DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
                 Loop
                 Con_ms.Close()
 
             ElseIf cmb_appointmentstatus.Text = "PENDING" Then
+
+
+
+                Dim mytimestampfrom = dt_Appoinment.Value.ToString("yyyy-MM-dd") & " 00:00:00"
+                Dim mytimestampto = dt_Appoinment1.Value.ToString("yyyy-MM-dd") & " 23:59:00"
+
+
                 conn_ms = "SELECT " & _
                "business_application_tbl.applicationID, " & _
                "business_application_tbl.recordID, " & _
+               "business_application_tbl.RefCode, " & _
                "business_application_tbl.accountno, " & _
-               "business_record_hdr.b_name, " & _
+              "business_application_tbl.businessname, " & _
+               "business_application_tbl.applicationtype, " & _
                "business_application_tbl.application_date, " & _
                "business_application_tbl.application_time, " & _
                 "business_applicationstatus_dtl.verify_status " & _
                 "FROM " & _
                 "ONLINE.business_application_tbl " & _
                 "INNER JOIN ONLINE.business_applicationstatus_dtl ON ONLINE.business_application_tbl.applicationID = ONLINE.business_applicationstatus_dtl.applicationID " & _
-                "INNER JOIN ONLINE.business_record_hdr ON ONLINE.business_application_tbl.recordID = ONLINE.business_record_hdr.recordID WHERE business_applicationstatus_dtl.verify_status ='P'  and Isreupload='0' and application_date between '" & Format((dt_Appoinment.Value), "yyyy-MM-dd") & "' and '" & Format((dt_Appoinment1.Value), "yyyy-MM-dd") & "' ORDER BY application_date ASC, application_date ASC"
-                Con_ms = New SqlConnection(cs)
+                " WHERE business_applicationstatus_dtl.verify_status ='P' and application_date between '" & mytimestampfrom & "' and '" & mytimestampto & "' ORDER BY application_date ASC"
+                'Con_ms = New SqlConnection(cs)
+                Con_ms = New SqlConnection(mcs)
+
                 Con_ms.Open()
                 cmd_ms = New SqlCommand(conn_ms, Con_ms)
                 rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
                 Do While rdr_ms.Read = True
-                    DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno"), rdr_ms("b_name"), rdr_ms("verify_status"), "VIEW")
+                    'DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date").ToString(), rdr_ms("application_time"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
+
+                    DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
+
+
                 Loop
 
                 Con_ms.Close()
+
             ElseIf cmb_appointmentstatus.Text = "DENIED" Then
+
+
 
                 Dim mytimestampfrom = dt_Appoinment.Value.ToString("yyyy-MM-dd") & " 00:00:00"
                 Dim mytimestampto = dt_Appoinment1.Value.ToString("yyyy-MM-dd") & " 23:59:00"
-                conn = "SELECT " & _
+                conn_ms = "SELECT " & _
                "business_application_tbl.applicationID, " & _
                "business_application_tbl.recordID, " & _
+               "business_application_tbl.RefCode, " & _
                "business_application_tbl.accountno, " & _
-               "business_record_hdr.b_name, " & _
+                          "business_application_tbl.businessname, " & _
+                "business_application_tbl.applicationtype, " & _
                "business_application_tbl.application_date, " & _
                "business_application_tbl.application_time, " & _
                 "business_applicationstatus_dtl.verify_status " & _
                 "FROM " & _
                 "ONLINE.business_application_tbl " & _
                 "INNER JOIN ONLINE.business_applicationstatus_dtl ON ONLINE.business_application_tbl.applicationID = ONLINE.business_applicationstatus_dtl.applicationID " & _
-                "INNER JOIN ONLINE.business_record_hdr ON ONLINE.business_application_tbl.recordID = ONLINE.business_record_hdr.recordID WHERE business_applicationstatus_dtl.verify_status='D' and Isreupload='0' and verify_deny_dttime between '" & mytimestampfrom & "' and '" & mytimestampto & "' ORDER BY application_date ASC"
+                " WHERE business_applicationstatus_dtl.verify_status='D' and verify_deny_dttime between '" & mytimestampfrom & "' and '" & mytimestampto & "' ORDER BY application_date ASC"
                 Con_ms = New SqlConnection(mcs)
                 Con_ms.Open()
-                cmd_ms = New SqlCommand(conn, Con_ms)
+                cmd_ms = New SqlCommand(conn_ms, Con_ms)
                 rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
                 Do While rdr_ms.Read = True
 
-                    DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno"), rdr_ms("b_name"), rdr_ms("verify_status"), "VIEW")
+                    'DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
 
+                    DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
                 Loop
 
                 Con_ms.Close()
+            ElseIf cmb_appointmentstatus.Text = "CLOSED" Then
 
-                
+                Dim mytimestampfrom = dt_Appoinment.Value.ToString("yyyy-MM-dd") & " 00:00:00"
+                Dim mytimestampto = dt_Appoinment1.Value.ToString("yyyy-MM-dd") & " 23:59:00"
+
+
+                conn_ms = "SELECT " & _
+               "business_application_tbl.applicationID, " & _
+               "business_application_tbl.recordID, " & _
+               "business_application_tbl.RefCode, " & _
+               "business_application_tbl.accountno, " & _
+                        "business_application_tbl.businessname, " & _
+               "business_application_tbl.applicationtype, " & _
+               "business_application_tbl.application_date, " & _
+               "business_application_tbl.application_time, " & _
+                "business_applicationstatus_dtl.verify_status " & _
+                "FROM " & _
+                "ONLINE.business_application_tbl " & _
+                "INNER JOIN ONLINE.business_applicationstatus_dtl ON ONLINE.business_application_tbl.applicationID = ONLINE.business_applicationstatus_dtl.applicationID " & _
+                "WHERE business_applicationstatus_dtl.verify_status ='C'  and application_date between '" & mytimestampfrom & "' and '" & mytimestampto & "' ORDER BY application_date ASC"
+                Con_ms = New SqlConnection(mcs)
+                Con_ms.Open()
+                cmd_ms = New SqlCommand(conn_ms, Con_ms)
+                rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
+                Do While rdr_ms.Read = True
+
+
+                    DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
+                    'DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
+                Loop
+
+                Con_ms.Close()
 
             ElseIf cmb_appointmentstatus.Text = "VERIFIED" Then
 
                 Dim mytimestampfrom = dt_Appoinment.Value.ToString("yyyy-MM-dd") & " 00:00:00"
                 Dim mytimestampto = dt_Appoinment1.Value.ToString("yyyy-MM-dd") & " 23:59:00"
-                conn = "SELECT " & _
+                conn_ms = "SELECT " & _
                "business_application_tbl.applicationID, " & _
                "business_application_tbl.recordID, " & _
                "business_application_tbl.accountno, " & _
-               "business_record_hdr.b_name, " & _
+               "business_application_tbl.RefCode, " & _
+                     "business_application_tbl.businessname, " & _
+               "business_application_tbl.applicationtype, " & _
                "business_application_tbl.application_date, " & _
                "business_application_tbl.application_time, " & _
                 "business_applicationstatus_dtl.verify_status " & _
                 "FROM " & _
                 "ONLINE.business_application_tbl " & _
                     "INNER JOIN ONLINE.business_applicationstatus_dtl ON ONLINE.business_application_tbl.applicationID = ONLINE.business_applicationstatus_dtl.applicationID " & _
-                "INNER JOIN ONLINE.business_record_hdr ON ONLINE.business_application_tbl.recordID = ONLINE.business_record_hdr.recordID WHERE business_applicationstatus_dtl.verify_status='V' and Isreupload='0' and verified_timedt between '" & mytimestampfrom & "' and '" & mytimestampto & "'  ORDER BY application_date ASC"
+              " WHERE business_applicationstatus_dtl.verify_status='V' and Isreupload='0' and verified_timedt between '" & mytimestampfrom & "' and '" & mytimestampto & "'  ORDER BY application_date ASC"
                 Con_ms = New SqlConnection(mcs)
                 Con_ms.Open()
-                cmd_ms = New SqlCommand(conn, Con_ms)
+                cmd_ms = New SqlCommand(conn_ms, Con_ms)
                 rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
                 Do While rdr_ms.Read = True
 
-                    DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno"), rdr_ms("b_name"), rdr_ms("verify_status"), "VIEW")
+                    'DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
 
+                    DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno").ToString(), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
                 Loop
 
                 Con_ms.Close()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Con_ms.Close()
         End Try
 
         lblCount.Text = DataGrid.RowCount
@@ -607,6 +725,7 @@ Public Class BPLO
             "business_application_tbl.recordID, " & _
             "business_application_tbl.accountno, " & _
             "business_record_hdr.b_name, " & _
+            "business_application_tbl.applicationtype, " & _
             "business_application_tbl.application_date, " & _
             "business_application_tbl.application_time, " & _
             "business_applicationstatus_dtl.verify_status FROM " & _
@@ -620,7 +739,7 @@ Public Class BPLO
             rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr_ms.Read = True
 
-                DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno"), rdr_ms("b_name"), rdr_ms("verify_status"), "VIEW")
+                DataGrid.Rows.Add(rdr_ms("ApplicationID"), rdr_ms("RecordID"), rdr_ms("application_date"), rdr_ms("application_time"), rdr_ms("accountno").ToString(), rdr_ms("b_name"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
 
             Loop
 
@@ -647,25 +766,30 @@ Public Class BPLO
         DataGrid.Rows.Clear()
         lblCount.Visible = False
         Try
+
+            Dim mytimestampfrom = dt_Appoinment.Value.ToString("yyyy-MM-dd") & " 00:00:00"
+            Dim mytimestampto = dt_Appoinment1.Value.ToString("yyyy-MM-dd") & " 23:59:00"
+
             conn_ms = "SELECT " & _
             "business_application_tbl.applicationID, " & _
             "business_application_tbl.RefCode, " & _
             "business_application_tbl.recordID, " & _
             "business_application_tbl.accountno, " & _
             "business_application_tbl.businessname, " & _
+            "business_application_tbl.applicationtype, " & _
             "business_application_tbl.application_date, " & _
             "business_application_tbl.application_time, " & _
             "business_applicationstatus_dtl.verify_status FROM " & _
             "ONLINE.business_application_tbl  " & _
             "INNER JOIN ONLINE.business_applicationstatus_dtl ON ONLINE.business_application_tbl.applicationID = ONLINE.business_applicationstatus_dtl.applicationID " & _
-            "WHERE business_applicationstatus_dtl.verify_status ='V' and business_applicationstatus_dtl.verified_timedt like '%" & Format((dt_Appoinment.Value), "yyyy-MM-dd") & "%' order by application_date ASC, application_time ASC"
+            "WHERE business_applicationstatus_dtl.verify_status ='V' and (business_applicationstatus_dtl.verified_timedt between '" & mytimestampfrom & "' and '" & mytimestampto & "') order by application_date ASC, application_time ASC"
             Con_ms = New SqlConnection(mcs)
             Con_ms.Open()
             cmd_ms = New SqlCommand(conn_ms, Con_ms)
             rdr_ms = cmd_ms.ExecuteReader(CommandBehavior.CloseConnection)
             Do While rdr_ms.Read = True
 
-                DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno"), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW")
+                DataGrid.Rows.Add(rdr_ms("applicationid"), rdr_ms("RefCode"), rdr_ms("RecordID"), rdr_ms("application_date"), Convert.ToDateTime(rdr_ms("application_date")).ToString("hh:mm tt"), rdr_ms("accountno"), rdr_ms("businessname"), rdr_ms("verify_status"), "VIEW", rdr_ms("applicationtype"))
 
             Loop
             Con_ms.Close()
@@ -689,6 +813,10 @@ Public Class BPLO
     End Sub
 
     Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub cmb_appointmentstatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_appointmentstatus.SelectedIndexChanged
 
     End Sub
 End Class

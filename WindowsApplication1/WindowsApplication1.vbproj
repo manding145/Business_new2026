@@ -218,17 +218,23 @@
     <Compile Include="bplomain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Connection.vb" />
-    <Compile Include="ConnectionConfiguration.Designer.vb">
-      <DependentUpon>ConnectionConfiguration.vb</DependentUpon>
+    <Compile Include="Closedform.Designer.vb">
+      <DependentUpon>Closedform.vb</DependentUpon>
     </Compile>
-    <Compile Include="ConnectionConfiguration.vb">
+    <Compile Include="Closedform.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Deny.Designer.vb">
       <DependentUpon>Deny.vb</DependentUpon>
     </Compile>
     <Compile Include="Deny.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connection.vb" />
+    <Compile Include="ConnectionConfiguration.Designer.vb">
+      <DependentUpon>ConnectionConfiguration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionConfiguration.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmNotificationControl.Designer.vb">
@@ -426,11 +432,14 @@
     <EmbeddedResource Include="bplomain.resx">
       <DependentUpon>bplomain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConnectionConfiguration.resx">
-      <DependentUpon>ConnectionConfiguration.vb</DependentUpon>
+    <EmbeddedResource Include="Closedform.resx">
+      <DependentUpon>Closedform.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Deny.resx">
       <DependentUpon>Deny.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionConfiguration.resx">
+      <DependentUpon>ConnectionConfiguration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNotificationControl.resx">
       <DependentUpon>FrmNotificationControl.vb</DependentUpon>

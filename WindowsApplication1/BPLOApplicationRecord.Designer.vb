@@ -22,12 +22,13 @@ Partial Class BPLOApplicationRecord
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BPLOApplicationRecord))
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lbl_accountno = New System.Windows.Forms.Label()
         Me.lbl_businessname = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -124,7 +125,7 @@ Partial Class BPLOApplicationRecord
         Me.btnDeny = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BtnAddNewRecord = New System.Windows.Forms.Button()
-        Me.BtnPrintHealthCard = New System.Windows.Forms.Button()
+        Me.B_CloseApplication = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.typeofapplication = New System.Windows.Forms.Label()
         Me.panel_verified = New System.Windows.Forms.Panel()
@@ -137,6 +138,9 @@ Partial Class BPLOApplicationRecord
         Me.status_label = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.useraccountid = New System.Windows.Forms.TextBox()
+        Me.panel_closed = New System.Windows.Forms.Panel()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.TabPage2.SuspendLayout()
         Me.panel_track_OBPermit.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -168,6 +172,8 @@ Partial Class BPLOApplicationRecord
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_pending.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel_closed.SuspendLayout()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_accountno
@@ -205,7 +211,7 @@ Partial Class BPLOApplicationRecord
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(724, 306)
+        Me.TabPage2.Size = New System.Drawing.Size(748, 306)
         Me.TabPage2.TabIndex = 6
         Me.TabPage2.Text = "TRACK APPLICATION STATUS"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -226,7 +232,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox9
         '
-        Me.PictureBox9.Image = Global.WindowsApplication1.My.Resources.Resources.medal
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
         Me.PictureBox9.Location = New System.Drawing.Point(14, 4)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(26, 26)
@@ -271,7 +277,7 @@ Partial Class BPLOApplicationRecord
         Me.Label35.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.Location = New System.Drawing.Point(46, 52)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(156, 13)
+        Me.Label35.Size = New System.Drawing.Size(157, 13)
         Me.Label35.TabIndex = 192
         Me.Label35.Text = "This account is evaluated by: "
         '
@@ -291,7 +297,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox8
         '
-        Me.PictureBox8.Image = Global.WindowsApplication1.My.Resources.Resources.coins
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
         Me.PictureBox8.Location = New System.Drawing.Point(13, 4)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(26, 26)
@@ -326,7 +332,7 @@ Partial Class BPLOApplicationRecord
         Me.Label30.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.Location = New System.Drawing.Point(60, 53)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(156, 13)
+        Me.Label30.Size = New System.Drawing.Size(157, 13)
         Me.Label30.TabIndex = 190
         Me.Label30.Text = "This account is evaluated by: "
         '
@@ -356,7 +362,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox7
         '
-        Me.PictureBox7.Image = Global.WindowsApplication1.My.Resources.Resources.credit_card
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
         Me.PictureBox7.Location = New System.Drawing.Point(13, 4)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(26, 26)
@@ -401,7 +407,7 @@ Partial Class BPLOApplicationRecord
         Me.txt_verification_remarks_fire.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_verification_remarks_fire.Location = New System.Drawing.Point(62, 53)
         Me.txt_verification_remarks_fire.Name = "txt_verification_remarks_fire"
-        Me.txt_verification_remarks_fire.Size = New System.Drawing.Size(156, 13)
+        Me.txt_verification_remarks_fire.Size = New System.Drawing.Size(157, 13)
         Me.txt_verification_remarks_fire.TabIndex = 186
         Me.txt_verification_remarks_fire.Text = "This account is evaluated by: "
         '
@@ -421,7 +427,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox6
         '
-        Me.PictureBox6.Image = Global.WindowsApplication1.My.Resources.Resources.calculator
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
         Me.PictureBox6.Location = New System.Drawing.Point(11, 6)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(26, 26)
@@ -466,7 +472,7 @@ Partial Class BPLOApplicationRecord
         Me.txt_asses_remarks.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_asses_remarks.Location = New System.Drawing.Point(56, 53)
         Me.txt_asses_remarks.Name = "txt_asses_remarks"
-        Me.txt_asses_remarks.Size = New System.Drawing.Size(151, 13)
+        Me.txt_asses_remarks.Size = New System.Drawing.Size(152, 13)
         Me.txt_asses_remarks.TabIndex = 182
         Me.txt_asses_remarks.Text = "This account is assessed by: "
         '
@@ -486,7 +492,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox5
         '
-        Me.PictureBox5.Image = Global.WindowsApplication1.My.Resources.Resources.checklist
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
         Me.PictureBox5.Location = New System.Drawing.Point(13, 4)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(26, 26)
@@ -521,7 +527,7 @@ Partial Class BPLOApplicationRecord
         Me.txt_evaluation_remarks.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_evaluation_remarks.Location = New System.Drawing.Point(46, 53)
         Me.txt_evaluation_remarks.Name = "txt_evaluation_remarks"
-        Me.txt_evaluation_remarks.Size = New System.Drawing.Size(156, 13)
+        Me.txt_evaluation_remarks.Size = New System.Drawing.Size(157, 13)
         Me.txt_evaluation_remarks.TabIndex = 183
         Me.txt_evaluation_remarks.Text = "This account is evaluated by: "
         '
@@ -551,7 +557,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.check
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(6, 4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(32, 26)
@@ -586,7 +592,7 @@ Partial Class BPLOApplicationRecord
         Me.txt_verification_remarks.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_verification_remarks.Location = New System.Drawing.Point(54, 53)
         Me.txt_verification_remarks.Name = "txt_verification_remarks"
-        Me.txt_verification_remarks.Size = New System.Drawing.Size(144, 13)
+        Me.txt_verification_remarks.Size = New System.Drawing.Size(145, 13)
         Me.txt_verification_remarks.TabIndex = 176
         Me.txt_verification_remarks.Text = "This account is verified by: "
         '
@@ -612,7 +618,7 @@ Partial Class BPLOApplicationRecord
         Me.Age.Location = New System.Drawing.Point(4, 22)
         Me.Age.Name = "Age"
         Me.Age.Padding = New System.Windows.Forms.Padding(3)
-        Me.Age.Size = New System.Drawing.Size(724, 306)
+        Me.Age.Size = New System.Drawing.Size(748, 306)
         Me.Age.TabIndex = 2
         Me.Age.Text = "OTHERS/ DENIED REMARKS"
         Me.Age.UseVisualStyleBackColor = True
@@ -699,7 +705,7 @@ Partial Class BPLOApplicationRecord
         Me.cmbAttachment.Controls.Add(Me.GroupBox2)
         Me.cmbAttachment.Location = New System.Drawing.Point(4, 22)
         Me.cmbAttachment.Name = "cmbAttachment"
-        Me.cmbAttachment.Size = New System.Drawing.Size(724, 306)
+        Me.cmbAttachment.Size = New System.Drawing.Size(748, 306)
         Me.cmbAttachment.TabIndex = 5
         Me.cmbAttachment.Text = "UPLOADED ATTACHMENTS"
         Me.cmbAttachment.UseVisualStyleBackColor = True
@@ -721,7 +727,7 @@ Partial Class BPLOApplicationRecord
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.Location = New System.Drawing.Point(24, 281)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(162, 13)
+        Me.Label15.Size = New System.Drawing.Size(163, 13)
         Me.Label15.TabIndex = 188
         Me.Label15.Text = "4th Qurater Income Tax Return"
         '
@@ -741,27 +747,27 @@ Partial Class BPLOApplicationRecord
         Me.Grid_attachments.AllowUserToDeleteRows = False
         Me.Grid_attachments.BackgroundColor = System.Drawing.Color.White
         Me.Grid_attachments.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Grid_attachments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Grid_attachments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.Grid_attachments.ColumnHeadersHeight = 25
         Me.Grid_attachments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.Grid_attachments.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column4, Me.Column6, Me.Column5})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.Format = "N2"
-        DataGridViewCellStyle3.NullValue = "0.00"
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Grid_attachments.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle15.Format = "N2"
+        DataGridViewCellStyle15.NullValue = "0.00"
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Grid_attachments.DefaultCellStyle = DataGridViewCellStyle15
         Me.Grid_attachments.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke
         Me.Grid_attachments.Location = New System.Drawing.Point(11, 17)
         Me.Grid_attachments.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
@@ -787,8 +793,8 @@ Partial Class BPLOApplicationRecord
         '
         'Column5
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle14
         Me.Column5.HeaderText = "ACTION"
         Me.Column5.Name = "Column5"
         Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -818,7 +824,7 @@ Partial Class BPLOApplicationRecord
         Me.TabPage1.Controls.Add(Me.BtnSearchRecord)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(724, 306)
+        Me.TabPage1.Size = New System.Drawing.Size(748, 306)
         Me.TabPage1.TabIndex = 3
         Me.TabPage1.Text = "APPLICATION RECORD"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -947,7 +953,7 @@ Partial Class BPLOApplicationRecord
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(48, 123)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(79, 13)
+        Me.Label6.Size = New System.Drawing.Size(78, 13)
         Me.Label6.TabIndex = 185
         Me.Label6.Text = "Business Line:"
         '
@@ -968,7 +974,7 @@ Partial Class BPLOApplicationRecord
         Me.txt_businessaddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_businessaddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_businessaddress.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_businessaddress.Location = New System.Drawing.Point(570, 109)
+        Me.txt_businessaddress.Location = New System.Drawing.Point(660, 124)
         Me.txt_businessaddress.Name = "txt_businessaddress"
         Me.txt_businessaddress.Size = New System.Drawing.Size(394, 22)
         Me.txt_businessaddress.TabIndex = 178
@@ -1010,9 +1016,9 @@ Partial Class BPLOApplicationRecord
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(465, 118)
+        Me.Label3.Location = New System.Drawing.Point(555, 133)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 13)
+        Me.Label3.Size = New System.Drawing.Size(98, 13)
         Me.Label3.TabIndex = 179
         Me.Label3.Text = "Business Address:"
         Me.Label3.Visible = False
@@ -1023,7 +1029,7 @@ Partial Class BPLOApplicationRecord
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(38, 90)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 13)
+        Me.Label2.Size = New System.Drawing.Size(86, 13)
         Me.Label2.TabIndex = 177
         Me.Label2.Text = "Business Name:"
         '
@@ -1128,7 +1134,7 @@ Partial Class BPLOApplicationRecord
         Me.Tab.Multiline = True
         Me.Tab.Name = "Tab"
         Me.Tab.SelectedIndex = 0
-        Me.Tab.Size = New System.Drawing.Size(732, 332)
+        Me.Tab.Size = New System.Drawing.Size(756, 332)
         Me.Tab.TabIndex = 162
         '
         'TabPage3
@@ -1139,7 +1145,7 @@ Partial Class BPLOApplicationRecord
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(724, 306)
+        Me.TabPage3.Size = New System.Drawing.Size(748, 306)
         Me.TabPage3.TabIndex = 7
         Me.TabPage3.Text = "REMARKS"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1150,27 +1156,27 @@ Partial Class BPLOApplicationRecord
         Me.DataGrid_remarks.AllowUserToDeleteRows = False
         Me.DataGrid_remarks.BackgroundColor = System.Drawing.Color.White
         Me.DataGrid_remarks.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_remarks.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_remarks.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.DataGrid_remarks.ColumnHeadersHeight = 25
         Me.DataGrid_remarks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGrid_remarks.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewLinkColumn1})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.Format = "N2"
-        DataGridViewCellStyle6.NullValue = "0.00"
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid_remarks.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle18.Format = "N2"
+        DataGridViewCellStyle18.NullValue = "0.00"
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_remarks.DefaultCellStyle = DataGridViewCellStyle18
         Me.DataGrid_remarks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke
         Me.DataGrid_remarks.Location = New System.Drawing.Point(45, 13)
         Me.DataGrid_remarks.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
@@ -1190,8 +1196,8 @@ Partial Class BPLOApplicationRecord
         '
         'DataGridViewLinkColumn1
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewLinkColumn1.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewLinkColumn1.DefaultCellStyle = DataGridViewCellStyle17
         Me.DataGridViewLinkColumn1.HeaderText = "REMARKS"
         Me.DataGridViewLinkColumn1.Name = "DataGridViewLinkColumn1"
         Me.DataGridViewLinkColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -1203,7 +1209,7 @@ Partial Class BPLOApplicationRecord
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(15, 253)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(83, 13)
+        Me.Label12.Size = New System.Drawing.Size(82, 13)
         Me.Label12.TabIndex = 186
         Me.Label12.Text = "BPLO Remarks:"
         '
@@ -1226,7 +1232,7 @@ Partial Class BPLOApplicationRecord
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(829, 32)
+        Me.Panel1.Size = New System.Drawing.Size(822, 32)
         Me.Panel1.TabIndex = 163
         '
         'Button3
@@ -1235,7 +1241,7 @@ Partial Class BPLOApplicationRecord
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(804, 5)
+        Me.Button3.Location = New System.Drawing.Point(796, 4)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(23, 26)
         Me.Button3.TabIndex = 77
@@ -1259,10 +1265,10 @@ Partial Class BPLOApplicationRecord
         Me.GroupBox1.Controls.Add(Me.btnDeny)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.BtnAddNewRecord)
-        Me.GroupBox1.Controls.Add(Me.BtnPrintHealthCard)
+        Me.GroupBox1.Controls.Add(Me.B_CloseApplication)
         Me.GroupBox1.Location = New System.Drawing.Point(421, 49)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(363, 106)
+        Me.GroupBox1.Size = New System.Drawing.Size(373, 106)
         Me.GroupBox1.TabIndex = 164
         Me.GroupBox1.TabStop = False
         '
@@ -1305,23 +1311,24 @@ Partial Class BPLOApplicationRecord
         Me.BtnAddNewRecord.Text = "&Verify"
         Me.BtnAddNewRecord.UseVisualStyleBackColor = False
         '
-        'BtnPrintHealthCard
+        'B_CloseApplication
         '
-        Me.BtnPrintHealthCard.BackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.BtnPrintHealthCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPrintHealthCard.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPrintHealthCard.ForeColor = System.Drawing.Color.White
-        Me.BtnPrintHealthCard.Location = New System.Drawing.Point(28, 58)
-        Me.BtnPrintHealthCard.Name = "BtnPrintHealthCard"
-        Me.BtnPrintHealthCard.Size = New System.Drawing.Size(151, 31)
-        Me.BtnPrintHealthCard.TabIndex = 115
-        Me.BtnPrintHealthCard.Text = "&Print"
-        Me.BtnPrintHealthCard.UseVisualStyleBackColor = False
+        Me.B_CloseApplication.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.B_CloseApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.B_CloseApplication.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.B_CloseApplication.ForeColor = System.Drawing.Color.White
+        Me.B_CloseApplication.Location = New System.Drawing.Point(28, 58)
+        Me.B_CloseApplication.Name = "B_CloseApplication"
+        Me.B_CloseApplication.Size = New System.Drawing.Size(151, 31)
+        Me.B_CloseApplication.TabIndex = 115
+        Me.B_CloseApplication.Text = "Close &Application"
+        Me.B_CloseApplication.UseVisualStyleBackColor = False
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.typeofapplication)
+        Me.Panel2.Controls.Add(Me.panel_closed)
         Me.Panel2.Controls.Add(Me.panel_verified)
         Me.Panel2.Controls.Add(Me.panel_denied)
         Me.Panel2.Controls.Add(Me.Panel_pending)
@@ -1330,9 +1337,9 @@ Partial Class BPLOApplicationRecord
         Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Controls.Add(Me.lbl_accountno)
         Me.Panel2.Controls.Add(Me.lbl_businessname)
-        Me.Panel2.Location = New System.Drawing.Point(37, 33)
+        Me.Panel2.Location = New System.Drawing.Point(78, 18)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(829, 541)
+        Me.Panel2.Size = New System.Drawing.Size(825, 562)
         Me.Panel2.TabIndex = 165
         '
         'typeofapplication
@@ -1370,7 +1377,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.check
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(3, 4)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(32, 26)
@@ -1400,7 +1407,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox3
         '
-        Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.no_entry
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(6, 4)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(32, 26)
@@ -1430,7 +1437,7 @@ Partial Class BPLOApplicationRecord
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.pending__1_
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(9, 5)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(26, 21)
@@ -1442,18 +1449,48 @@ Partial Class BPLOApplicationRecord
         Me.useraccountid.BackColor = System.Drawing.Color.AliceBlue
         Me.useraccountid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.useraccountid.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.useraccountid.Location = New System.Drawing.Point(823, 279)
+        Me.useraccountid.Location = New System.Drawing.Point(984, 479)
         Me.useraccountid.Name = "useraccountid"
         Me.useraccountid.Size = New System.Drawing.Size(197, 22)
         Me.useraccountid.TabIndex = 186
         Me.useraccountid.Visible = False
+        '
+        'panel_closed
+        '
+        Me.panel_closed.Controls.Add(Me.Label19)
+        Me.panel_closed.Controls.Add(Me.PictureBox10)
+        Me.panel_closed.Location = New System.Drawing.Point(58, 35)
+        Me.panel_closed.Name = "panel_closed"
+        Me.panel_closed.Size = New System.Drawing.Size(118, 33)
+        Me.panel_closed.TabIndex = 168
+        Me.panel_closed.Visible = False
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label19.Location = New System.Drawing.Point(41, 7)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(62, 15)
+        Me.Label19.TabIndex = 108
+        Me.Label19.Text = "CLOSED"
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Image = Global.WindowsApplication1.My.Resources.Resources.no_entry
+        Me.PictureBox10.Location = New System.Drawing.Point(3, 4)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(32, 26)
+        Me.PictureBox10.TabIndex = 106
+        Me.PictureBox10.TabStop = False
         '
         'BPLOApplicationRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(910, 610)
+        Me.ClientSize = New System.Drawing.Size(992, 605)
         Me.Controls.Add(Me.useraccountid)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -1507,6 +1544,9 @@ Partial Class BPLOApplicationRecord
         Me.Panel_pending.ResumeLayout(False)
         Me.Panel_pending.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panel_closed.ResumeLayout(False)
+        Me.panel_closed.PerformLayout()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1545,7 +1585,7 @@ Partial Class BPLOApplicationRecord
     Friend WithEvents btnDeny As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents BtnAddNewRecord As System.Windows.Forms.Button
-    Friend WithEvents BtnPrintHealthCard As System.Windows.Forms.Button
+    Friend WithEvents B_CloseApplication As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Button3 As System.Windows.Forms.Button
@@ -1620,4 +1660,7 @@ Partial Class BPLOApplicationRecord
     Friend WithEvents fullname As System.Windows.Forms.TextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents useraccountid As System.Windows.Forms.TextBox
+    Friend WithEvents panel_closed As System.Windows.Forms.Panel
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox10 As System.Windows.Forms.PictureBox
 End Class

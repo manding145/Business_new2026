@@ -27,12 +27,22 @@ Partial Class MainMenu
         Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbluserrole = New System.Windows.Forms.Label()
         Me.lblfname = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.ReportMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.RecordsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.msBusinessRecord = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,23 +55,13 @@ Partial Class MainMenu
         Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NotificationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.ReportMenuStrip.SuspendLayout()
-        Me.SettingsMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ReportMenuStrip.SuspendLayout()
+        Me.SettingsMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Splitter2
@@ -70,7 +70,7 @@ Partial Class MainMenu
         Me.Splitter2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Splitter2.Location = New System.Drawing.Point(212, 0)
         Me.Splitter2.Name = "Splitter2"
-        Me.Splitter2.Size = New System.Drawing.Size(924, 50)
+        Me.Splitter2.Size = New System.Drawing.Size(998, 50)
         Me.Splitter2.TabIndex = 52
         Me.Splitter2.TabStop = False
         '
@@ -109,139 +109,6 @@ Partial Class MainMenu
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(212, 702)
         Me.Panel1.TabIndex = 51
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(12, 90)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(191, 17)
-        Me.Label1.TabIndex = 109
-        Me.Label1.Text = "Online Business Renewal"
-        '
-        'lbluserrole
-        '
-        Me.lbluserrole.AutoSize = True
-        Me.lbluserrole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lbluserrole.Location = New System.Drawing.Point(59, 26)
-        Me.lbluserrole.Name = "lbluserrole"
-        Me.lbluserrole.Size = New System.Drawing.Size(36, 13)
-        Me.lbluserrole.TabIndex = 114
-        Me.lbluserrole.Text = "Admin"
-        '
-        'lblfname
-        '
-        Me.lblfname.AutoSize = True
-        Me.lblfname.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblfname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblfname.Location = New System.Drawing.Point(59, 7)
-        Me.lblfname.Name = "lblfname"
-        Me.lblfname.Size = New System.Drawing.Size(58, 13)
-        Me.lblfname.TabIndex = 110
-        Me.lblfname.Text = "RONALD"
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 300
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel2.Controls.Add(Me.PictureBox4)
-        Me.Panel2.Controls.Add(Me.lbluserrole)
-        Me.Panel2.Controls.Add(Me.PictureBox3)
-        Me.Panel2.Controls.Add(Me.lblfname)
-        Me.Panel2.Location = New System.Drawing.Point(212, 2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(931, 48)
-        Me.Panel2.TabIndex = 53
-        '
-        'ReportMenuStrip
-        '
-        Me.ReportMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecordsToolStripMenuItem})
-        Me.ReportMenuStrip.Location = New System.Drawing.Point(212, 50)
-        Me.ReportMenuStrip.Name = "ReportMenuStrip"
-        Me.ReportMenuStrip.Size = New System.Drawing.Size(924, 24)
-        Me.ReportMenuStrip.TabIndex = 55
-        Me.ReportMenuStrip.Text = "MenuStrip1"
-        Me.ReportMenuStrip.Visible = False
-        '
-        'RecordsToolStripMenuItem
-        '
-        Me.RecordsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.msBusinessRecord, Me.B2NoOfAssessedPaidBusinessesToolStripMenuItem})
-        Me.RecordsToolStripMenuItem.Name = "RecordsToolStripMenuItem"
-        Me.RecordsToolStripMenuItem.Size = New System.Drawing.Size(91, 20)
-        Me.RecordsToolStripMenuItem.Text = "BPLO Reports"
-        '
-        'msBusinessRecord
-        '
-        Me.msBusinessRecord.Name = "msBusinessRecord"
-        Me.msBusinessRecord.Size = New System.Drawing.Size(268, 22)
-        Me.msBusinessRecord.Text = "B-1 Listed of Printed Mayor's Permit"
-        '
-        'B2NoOfAssessedPaidBusinessesToolStripMenuItem
-        '
-        Me.B2NoOfAssessedPaidBusinessesToolStripMenuItem.Name = "B2NoOfAssessedPaidBusinessesToolStripMenuItem"
-        Me.B2NoOfAssessedPaidBusinessesToolStripMenuItem.Size = New System.Drawing.Size(268, 22)
-        Me.B2NoOfAssessedPaidBusinessesToolStripMenuItem.Text = "B -2 No. of Assessed/Paid Businesses"
-        '
-        'Timer2
-        '
-        Me.Timer2.Enabled = True
-        Me.Timer2.Interval = 600000
-        '
-        'SettingsMenuStrip1
-        '
-        Me.SettingsMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.MaintenanceToolStripMenuItem, Me.NotificationToolStripMenuItem})
-        Me.SettingsMenuStrip1.Location = New System.Drawing.Point(212, 50)
-        Me.SettingsMenuStrip1.Name = "SettingsMenuStrip1"
-        Me.SettingsMenuStrip1.Size = New System.Drawing.Size(924, 24)
-        Me.SettingsMenuStrip1.TabIndex = 57
-        Me.SettingsMenuStrip1.Text = "MenuStrip1"
-        Me.SettingsMenuStrip1.Visible = False
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.UserlevelToolStripMenuItem, Me.AuditTrailToolStripMenuItem})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(116, 20)
-        Me.ToolStripMenuItem1.Text = "User Management"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(127, 22)
-        Me.ToolStripMenuItem2.Text = "Users"
-        '
-        'UserlevelToolStripMenuItem
-        '
-        Me.UserlevelToolStripMenuItem.Name = "UserlevelToolStripMenuItem"
-        Me.UserlevelToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
-        Me.UserlevelToolStripMenuItem.Text = "Userlevel"
-        '
-        'AuditTrailToolStripMenuItem
-        '
-        Me.AuditTrailToolStripMenuItem.Name = "AuditTrailToolStripMenuItem"
-        Me.AuditTrailToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
-        Me.AuditTrailToolStripMenuItem.Text = "Audit Trail"
-        '
-        'MaintenanceToolStripMenuItem
-        '
-        Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
-        Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
-        Me.MaintenanceToolStripMenuItem.Text = "Maintenance"
-        '
-        'NotificationToolStripMenuItem
-        '
-        Me.NotificationToolStripMenuItem.Name = "NotificationToolStripMenuItem"
-        Me.NotificationToolStripMenuItem.Size = New System.Drawing.Size(82, 20)
-        Me.NotificationToolStripMenuItem.Text = "Notification"
         '
         'Button7
         '
@@ -378,10 +245,62 @@ Partial Class MainMenu
         Me.Button1.Text = "      Print Mayors Permit"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(12, 90)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(191, 17)
+        Me.Label1.TabIndex = 109
+        Me.Label1.Text = "Online Business Renewal"
+        '
+        'lbluserrole
+        '
+        Me.lbluserrole.AutoSize = True
+        Me.lbluserrole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbluserrole.Location = New System.Drawing.Point(59, 26)
+        Me.lbluserrole.Name = "lbluserrole"
+        Me.lbluserrole.Size = New System.Drawing.Size(36, 13)
+        Me.lbluserrole.TabIndex = 114
+        Me.lbluserrole.Text = "Admin"
+        '
+        'lblfname
+        '
+        Me.lblfname.AutoSize = True
+        Me.lblfname.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblfname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblfname.Location = New System.Drawing.Point(59, 7)
+        Me.lblfname.Name = "lblfname"
+        Me.lblfname.Size = New System.Drawing.Size(58, 13)
+        Me.lblfname.TabIndex = 110
+        Me.lblfname.Text = "RONALD"
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 300
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel2.Controls.Add(Me.PictureBox4)
+        Me.Panel2.Controls.Add(Me.lbluserrole)
+        Me.Panel2.Controls.Add(Me.PictureBox3)
+        Me.Panel2.Controls.Add(Me.lblfname)
+        Me.Panel2.Location = New System.Drawing.Point(212, 2)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(998, 48)
+        Me.Panel2.TabIndex = 53
+        '
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.down_arrow__1_
-        Me.PictureBox4.Location = New System.Drawing.Point(891, 17)
+        Me.PictureBox4.Location = New System.Drawing.Point(965, 10)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(21, 19)
         Me.PictureBox4.TabIndex = 115
@@ -396,12 +315,93 @@ Partial Class MainMenu
         Me.PictureBox3.TabIndex = 113
         Me.PictureBox3.TabStop = False
         '
+        'ReportMenuStrip
+        '
+        Me.ReportMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecordsToolStripMenuItem})
+        Me.ReportMenuStrip.Location = New System.Drawing.Point(212, 50)
+        Me.ReportMenuStrip.Name = "ReportMenuStrip"
+        Me.ReportMenuStrip.Size = New System.Drawing.Size(924, 24)
+        Me.ReportMenuStrip.TabIndex = 55
+        Me.ReportMenuStrip.Text = "MenuStrip1"
+        Me.ReportMenuStrip.Visible = False
+        '
+        'RecordsToolStripMenuItem
+        '
+        Me.RecordsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.msBusinessRecord, Me.B2NoOfAssessedPaidBusinessesToolStripMenuItem})
+        Me.RecordsToolStripMenuItem.Name = "RecordsToolStripMenuItem"
+        Me.RecordsToolStripMenuItem.Size = New System.Drawing.Size(91, 20)
+        Me.RecordsToolStripMenuItem.Text = "BPLO Reports"
+        '
+        'msBusinessRecord
+        '
+        Me.msBusinessRecord.Name = "msBusinessRecord"
+        Me.msBusinessRecord.Size = New System.Drawing.Size(268, 22)
+        Me.msBusinessRecord.Text = "B-1 Listed of Printed Mayor's Permit"
+        '
+        'B2NoOfAssessedPaidBusinessesToolStripMenuItem
+        '
+        Me.B2NoOfAssessedPaidBusinessesToolStripMenuItem.Name = "B2NoOfAssessedPaidBusinessesToolStripMenuItem"
+        Me.B2NoOfAssessedPaidBusinessesToolStripMenuItem.Size = New System.Drawing.Size(268, 22)
+        Me.B2NoOfAssessedPaidBusinessesToolStripMenuItem.Text = "B -2 No. of Assessed/Paid Businesses"
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 600000
+        '
+        'SettingsMenuStrip1
+        '
+        Me.SettingsMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.MaintenanceToolStripMenuItem, Me.NotificationToolStripMenuItem})
+        Me.SettingsMenuStrip1.Location = New System.Drawing.Point(212, 50)
+        Me.SettingsMenuStrip1.Name = "SettingsMenuStrip1"
+        Me.SettingsMenuStrip1.Size = New System.Drawing.Size(924, 24)
+        Me.SettingsMenuStrip1.TabIndex = 57
+        Me.SettingsMenuStrip1.Text = "MenuStrip1"
+        Me.SettingsMenuStrip1.Visible = False
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.UserlevelToolStripMenuItem, Me.AuditTrailToolStripMenuItem})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(116, 20)
+        Me.ToolStripMenuItem1.Text = "User Management"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(127, 22)
+        Me.ToolStripMenuItem2.Text = "Users"
+        '
+        'UserlevelToolStripMenuItem
+        '
+        Me.UserlevelToolStripMenuItem.Name = "UserlevelToolStripMenuItem"
+        Me.UserlevelToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.UserlevelToolStripMenuItem.Text = "Userlevel"
+        '
+        'AuditTrailToolStripMenuItem
+        '
+        Me.AuditTrailToolStripMenuItem.Name = "AuditTrailToolStripMenuItem"
+        Me.AuditTrailToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.AuditTrailToolStripMenuItem.Text = "Audit Trail"
+        '
+        'MaintenanceToolStripMenuItem
+        '
+        Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
+        Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
+        Me.MaintenanceToolStripMenuItem.Text = "Maintenance"
+        '
+        'NotificationToolStripMenuItem
+        '
+        Me.NotificationToolStripMenuItem.Name = "NotificationToolStripMenuItem"
+        Me.NotificationToolStripMenuItem.Size = New System.Drawing.Size(82, 20)
+        Me.NotificationToolStripMenuItem.Text = "Notification"
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(1136, 667)
+        Me.ClientSize = New System.Drawing.Size(1210, 667)
         Me.Controls.Add(Me.ReportMenuStrip)
         Me.Controls.Add(Me.SettingsMenuStrip1)
         Me.Controls.Add(Me.Panel1)
@@ -415,15 +415,15 @@ Partial Class MainMenu
         Me.Text = "MainMenun"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ReportMenuStrip.ResumeLayout(False)
         Me.ReportMenuStrip.PerformLayout()
         Me.SettingsMenuStrip1.ResumeLayout(False)
         Me.SettingsMenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
