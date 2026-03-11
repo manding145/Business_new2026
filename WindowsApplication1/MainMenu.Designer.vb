@@ -70,7 +70,7 @@ Partial Class MainMenu
         Me.Splitter2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Splitter2.Location = New System.Drawing.Point(212, 0)
         Me.Splitter2.Name = "Splitter2"
-        Me.Splitter2.Size = New System.Drawing.Size(998, 50)
+        Me.Splitter2.Size = New System.Drawing.Size(1031, 50)
         Me.Splitter2.TabIndex = 52
         Me.Splitter2.TabStop = False
         '
@@ -294,13 +294,13 @@ Partial Class MainMenu
         Me.Panel2.Controls.Add(Me.lblfname)
         Me.Panel2.Location = New System.Drawing.Point(212, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(998, 48)
+        Me.Panel2.Size = New System.Drawing.Size(1031, 48)
         Me.Panel2.TabIndex = 53
         '
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.down_arrow__1_
-        Me.PictureBox4.Location = New System.Drawing.Point(965, 10)
+        Me.PictureBox4.Location = New System.Drawing.Point(998, 17)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(21, 19)
         Me.PictureBox4.TabIndex = 115
@@ -401,7 +401,7 @@ Partial Class MainMenu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(1210, 667)
+        Me.ClientSize = New System.Drawing.Size(1243, 667)
         Me.Controls.Add(Me.ReportMenuStrip)
         Me.Controls.Add(Me.SettingsMenuStrip1)
         Me.Controls.Add(Me.Panel1)

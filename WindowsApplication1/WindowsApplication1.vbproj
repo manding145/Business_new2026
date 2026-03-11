@@ -120,10 +120,10 @@
     <Reference Include="AForge.Video.DirectShow">
       <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Gma.QrCodeNet.Encoding.Net35">
       <HintPath>C:\Users\UNDp\Downloads\Compressed\QrCode.Net 0.4 Pre-Release\QrCode.Net 0.4 Pre-Release\Gma.QrCodeNet.Encoding.Net35\Gma.QrCodeNet.Encoding.Net35.dll</HintPath>
@@ -224,17 +224,17 @@
     <Compile Include="Closedform.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Deny.Designer.vb">
-      <DependentUpon>Deny.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Deny.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Connection.vb" />
     <Compile Include="ConnectionConfiguration.Designer.vb">
       <DependentUpon>ConnectionConfiguration.vb</DependentUpon>
     </Compile>
     <Compile Include="ConnectionConfiguration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Deny.Designer.vb">
+      <DependentUpon>Deny.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Deny.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmNotificationControl.Designer.vb">
@@ -342,7 +342,7 @@
     <Compile Include="Resources\Form3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RptMayorsPermit.vb">
+    <Compile Include="Resources\RptMayorsPermit.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptMayorsPermit.rpt</DependentUpon>
@@ -432,14 +432,11 @@
     <EmbeddedResource Include="bplomain.resx">
       <DependentUpon>bplomain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Closedform.resx">
-      <DependentUpon>Closedform.vb</DependentUpon>
+    <EmbeddedResource Include="ConnectionConfiguration.resx">
+      <DependentUpon>ConnectionConfiguration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Deny.resx">
       <DependentUpon>Deny.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConnectionConfiguration.resx">
-      <DependentUpon>ConnectionConfiguration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNotificationControl.resx">
       <DependentUpon>FrmNotificationControl.vb</DependentUpon>
@@ -493,7 +490,7 @@
     <EmbeddedResource Include="Resources\Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RptMayorsPermit.rpt">
+    <EmbeddedResource Include="Resources\RptMayorsPermit.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptMayorsPermit.vb</LastGenOutput>
     </EmbeddedResource>

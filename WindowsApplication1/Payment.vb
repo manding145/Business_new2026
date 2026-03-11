@@ -80,11 +80,11 @@ Public Class Payment
         End If
 
 
-        'If fire_file.Text = "" Then
+        If fire_file.Text = "" Then
 
-        '    MsgBox(" no Fire OR file uploaded")
-        '    Exit Sub
-        'End If
+            MsgBox(" no Fire OR file uploaded")
+            Exit Sub
+        End If
 
 
 
@@ -222,7 +222,7 @@ Public Class Payment
 
             cmd_ms.Parameters.Add("@useraccountid", SqlDbType.Int).Value = useraccountid.Text
 
-            cmd_ms.Parameters.Add("@Date", SqlDbType.DateTime).Value = DateAndTime.Now()
+            cmd_ms.Parameters.Add("@Date", SqlDbType.VarChar).Value = DateAndTime.Now()
             cmd_ms.ExecuteNonQuery()
             Con_ms.Close()
 

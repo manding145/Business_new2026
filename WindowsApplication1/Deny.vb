@@ -120,6 +120,7 @@ Public Class Deny
 
 
 
+
             Con_ms = New SqlConnection(mcs)
             Con_ms.Open()
             conn_ms = "UPDATE ONLINE.business_applicationstatus_dtl set verify_status = 'D', IsReupload ='0', Denied_remarks = @Remarks,  verify_deny_dttime = '" & mytimestamp & "', user_deny='" & userid & "' WHERE applicationID='" & BPLOApplicationRecord.txt_applicationno.Text & "'"
