@@ -121,7 +121,7 @@ Public Class PrintBarangayPermit
 
 
         End With
-        rpt.SetDatabaseLogon("usera2", "passa2")
+        rpt.SetDatabaseLogon("cmiso", "accounting")
         CrystalReportViewer1.ReportSource = rpt
         CrystalReportViewer1.ParameterFieldInfo = pfields
         CrystalReportViewer1.Show()
