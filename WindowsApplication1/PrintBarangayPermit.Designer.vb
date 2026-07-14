@@ -108,7 +108,7 @@ Partial Class PrintBarangayPermit
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PrintBarangayPermit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PrintBarangayPermit"
+        Me.Text = "dddddddadadas"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

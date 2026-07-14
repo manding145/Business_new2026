@@ -71,19 +71,16 @@ Public Class PrintBarangayPermit
         'Dim txt_businessid1 As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.ReportDefinition.Sections(3).ReportObjects("txt_businessid1")
         'Dim txt_ornumber1 As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.ReportDefinition.Sections(3).ReportObjects("txt_ornumber1")
         'Dim txtnature As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.ReportDefinition.Sections(3).ReportObjects("txtnature")
-
+2:
 
         With MayorsPermitControl
             'Dim NUMBERKO As Integer
             'NUMBERKO = .txt_permitNumber.Text
             'txt_businessid1.Text = .mBIN
-            'txtBusinessID.Text = .mBIN
+            'txtBusinessID.Text = .mBINd
             'txt_permit_no.Text = Format(NUMBERKO, "00000")
             'txt_permit_year.Text = .myear
-            'txt_year1.Text = .myear
-            'TxtAccountNo.Text = .txt_AccountNo.Text
-            'TxtBusinessName.Text = .txt_tradename.Text
-            'TxtBarangayName.Text = .mBarangayName
+            'txt_year1.Text = .myearasdsssssssa
             'TxtBusinessAddress.Text = .mBusinessAddress
             'TxtContact.Text = .mPhone
             'TxtNumberofEmployees.Text = .mEmployees

@@ -53,8 +53,9 @@ Public Class BPLO
                         NewMDIChild.Show()
 
                         Dim BPLOApplicationRecord As BPLOApplicationRecord = CType(Application.OpenForms("BPLOApplicationRecord"), BPLOApplicationRecord)
-
                         With BPLOApplicationRecord
+
+
                             .txt_grossdeclared.Text = rdr_ms("gross_dec").ToString
                             .TxtRefenceNo.Text = rdr_ms("RefCode").ToString
                             applicationID_search = rdr_ms("applicationID").ToString
@@ -71,12 +72,9 @@ Public Class BPLO
                             '.txt_username.Text = rdr_ms("b_username").ToString
                             '.txt_password.Text = rdr_ms("b_password").ToString
                             .txt_itr4.Text = rdr_ms("b_itr4").ToString
-
                             .fullname.Text = rdr_ms("Firstname").ToString() + " " + rdr_ms("Middlename").ToString() + " " + rdr_ms("Lastname").ToString()
                             .typeofapplication.Text = rdr_ms("applicationtype").ToString()
                             .useraccountid.Text = rdr_ms("user_id").ToString()
-
-
                             .Grid_attachments.Rows.Clear()
 
 
@@ -86,8 +84,8 @@ Public Class BPLO
                             Con_ms2.Open()
                             cmd_ms2 = New SqlCommand(conn_ms2, Con_ms2)
                             rdr_ms2 = cmd_ms2.ExecuteReader(CommandBehavior.CloseConnection)
-                            Do While rdr_ms2.Read = True
 
+                            Do While rdr_ms2.Read = True
                                 Dim attach_code_temp As String
                                 attach_code_temp = rdr_ms2("attachmentcode")
                                 If rdr_ms(attach_code_temp).ToString = "" Then
@@ -120,12 +118,14 @@ Public Class BPLO
                                 .Panel_pending.Visible = True
                                 .panel_verified.Visible = False
                                 .panel_denied.Visible = False
+
                             ElseIf rdr_ms("verify_status") = "V" Then
                                 .Panel_pending.Visible = False
                                 .panel_verified.Visible = True
                                 .panel_denied.Visible = False
                                 .BtnAddNewRecord.Enabled = False
                                 .btnDeny.Visible = False
+
                             ElseIf rdr_ms("verify_status") = "D" Then
                                 .Panel_pending.Visible = False
                                 .panel_verified.Visible = False
@@ -133,6 +133,7 @@ Public Class BPLO
                                 .BtnAddNewRecord.Enabled = False
                                 .B_CloseApplication.Enabled = False
                                 .btnDeny.Visible = False
+
                             ElseIf rdr_ms("verify_status") = "C" Then
                                 .Panel_pending.Visible = False
                                 .panel_verified.Visible = False
@@ -140,11 +141,9 @@ Public Class BPLO
                                 .BtnAddNewRecord.Enabled = False
                                 .B_CloseApplication.Enabled = False
                                 .btnDeny.Visible = False
+
                             End If
                             .txt_deniedremarks.Text = rdr_ms("Denied_remarks").ToString
-
-
-
 
 
 
@@ -220,7 +219,6 @@ Public Class BPLO
 
 
                             'Assessment
-
                             If rdr_ms("assess_status").ToString = "P" Then
                                 .panel_track_assessment.Visible = True
                                 .txt_asses_date.Text = "NOT AVAILABLE"
@@ -253,9 +251,8 @@ Public Class BPLO
 
                             Else
                                 .panel_track_assessment.Visible = False
+
                             End If
-
-
 
                             If rdr_ms("fire_assess_status").ToString = "V" Then
                                 .panel_track_pay.Visible = True
@@ -287,14 +284,11 @@ Public Class BPLO
                             End If
 
 
-
                             If rdr_ms("fire_assess_status").ToString = "" Then
 
                             Else
                                 .DataGrid_remarks.Rows.Add("Fire Assessment", "-")
                             End If
-
-
 
 
                             If rdr_ms("printed_remarks").ToString = "" Then
@@ -304,19 +298,16 @@ Public Class BPLO
                             End If
 
 
-
                         End With
                     End If
-
                     Con_ms.Close()
+
                 End If
                 rdr_ms1.Close()
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-
-
 
         End If
 

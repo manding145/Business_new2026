@@ -494,3 +494,4 @@ C:\Users\Man Bacolod\Documents\Project\Business_new2026\WindowsApplication1\obj\
 C:\Users\Man Bacolod\Documents\Project\Business_new2026\WindowsApplication1\obj\x86\Debug\WindowsApplication1.exe
 C:\Users\Man Bacolod\Documents\Project\Business_new2026\WindowsApplication1\obj\x86\Debug\WindowsApplication1.xml
 C:\Users\Man Bacolod\Documents\Project\Business_new2026\WindowsApplication1\obj\x86\Debug\WindowsApplication1.pdb
+C:\Users\Man Bacolod\Documents\Project\Business_new2026\WindowsApplication1\obj\x86\Debug\WindowsApplication1.vbprojResolveAssemblyReference.cache
